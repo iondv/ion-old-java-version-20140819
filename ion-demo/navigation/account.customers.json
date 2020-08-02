@@ -1,0 +1,12 @@
+{
+  "code": "account.customers",
+  "type": 1,
+  "caption": "Организации",
+  "classname": "Customer",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

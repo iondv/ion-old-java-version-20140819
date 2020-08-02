@@ -1,0 +1,12 @@
+{
+  "code": "account",
+  "type": 0,
+  "caption": "Информационные системы",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.SUBD",
+  "type": 1,
+  "caption": "СУБД",
+  "classname": "BD",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

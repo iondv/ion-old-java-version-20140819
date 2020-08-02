@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.person",
+  "type": 1,
+  "caption": "Физические лица",
+  "classname": "Person",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

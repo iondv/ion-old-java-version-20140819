@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.TipIS",
+  "type": 1,
+  "caption": "Тип ИС",
+  "classname": "ProjectType",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,45 @@
+{
+  "columns": [
+    {
+      "caption": "ID",
+      "property": "Id",
+      "sorted": true
+    },
+    {
+      "caption": "Наименование",
+      "property": "NameShort",
+      "sorted": true
+    },
+    {
+      "caption": "Оператор",
+      "property": "Customer",
+      "sorted": true
+    },
+    {
+      "caption": "Тип ИС",
+      "property": "Type",
+      "sorted": true
+    },
+    {
+      "caption": "Дата ввода",
+      "property": "DataVvoda",
+      "sorted": true
+    }
+  ],
+  "details": [
+    {
+      "caption": "Контракты",
+      "type": 1,
+      "property": "Contracts",
+      "size": 2,
+      "maskName": null,
+      "mode": null,
+      "fields": [],
+      "columns": [],
+      "actions": 7
+    }
+  ],
+  "actions": 7,
+  "allowSearch": true,
+  "pageSize": 25
+}

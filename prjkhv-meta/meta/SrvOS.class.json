@@ -1,0 +1,53 @@
+{
+  "key": "Kod",
+  "semantic": "Name",
+  "name": "SrvOS",
+  "caption": "Серверная ОС",
+  "ancestor": null,
+  "container": null,
+  "properties": [
+    {
+      "name": "Kod",
+      "caption": "Код",
+      "type": 0,
+      "size": 10,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": false,
+      "role_permissions": []
+    },
+    {
+      "name": "Name",
+      "caption": "Название",
+      "type": 0,
+      "size": 100,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": false,
+      "role_permissions": []
+    }
+  ],
+  "role_permissions": []
+}

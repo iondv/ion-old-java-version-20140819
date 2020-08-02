@@ -1,0 +1,13 @@
+{
+  "columns": [
+    {
+      "caption": "Супер",
+      "property": "customer",
+      "sorted": true
+    }
+  ],
+  "details": [],
+  "actions": 39,
+  "allowSearch": true,
+  "pageSize": 10
+}

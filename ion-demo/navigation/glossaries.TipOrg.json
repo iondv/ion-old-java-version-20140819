@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.TipOrg",
+  "type": 1,
+  "caption": "Тип организации",
+  "classname": "CustomerType",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

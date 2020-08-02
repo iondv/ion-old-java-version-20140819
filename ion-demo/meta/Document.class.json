@@ -1,0 +1,244 @@
+{
+  "key": "Id",
+  "semantic": "Description",
+  "name": "Document",
+  "caption": "Документ",
+  "ancestor": null,
+  "container": "Contract",
+  "properties": [
+    {
+      "name": "Chapter",
+      "caption": "Раздел",
+      "type": 0,
+      "size": 3,
+      "decimals": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": true,
+      "unique": false,
+      "default_value": "",
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [
+        {
+          "role": "ANY",
+          "type": "MATRIX",
+          "matrix": [
+            {
+              "comment": "разделы",
+              "conditions": [],
+              "result": [
+                {
+                  "key": "GLO",
+                  "value": "Справочные"
+                },
+                {
+                  "key": "RES",
+                  "value": "Результаты"
+                },
+                {
+                  "key": "FIN",
+                  "value": "Финансовые"
+                },
+                {
+                  "key": "PRJ",
+                  "value": "Проектные"
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "hq": ""
+        }
+      ],
+      "selectall": false,
+      "role_permissions": []
+    },
+    {
+      "name": "Contract",
+      "caption": "Контракт",
+      "type": 13,
+      "size": 0,
+      "decimals": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": "",
+      "ref_class": "Contract",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": true,
+      "role_permissions": []
+    },
+    {
+      "name": "Description",
+      "caption": "Описание",
+      "type": 1,
+      "size": 2000,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": false,
+      "role_permissions": []
+    },
+    {
+      "name": "File",
+      "caption": "Файл",
+      "type": 5,
+      "size": 500,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": false,
+      "role_permissions": []
+    },
+    {
+      "name": "Id",
+      "caption": "Идентификатор",
+      "type": 6,
+      "size": 20,
+      "decimals": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": false,
+      "role_permissions": []
+    },
+    {
+      "name": "Stage",
+      "caption": "Этап",
+      "type": 13,
+      "size": 0,
+      "decimals": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": "",
+      "ref_class": "Stage",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [
+        {
+          "role": "ANY",
+          "type": "HQL",
+          "matrix": [],
+          "parameters": [
+            {
+              "key": "contract",
+              "value": "$Contract"
+            }
+          ],
+          "hq": "from Stage s where s.contract \u003d :contract"
+        }
+      ],
+      "selectall": true,
+      "role_permissions": []
+    },
+    {
+      "name": "Type",
+      "caption": "Тип",
+      "type": 13,
+      "size": 0,
+      "decimals": 0,
+      "nullable": false,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": "",
+      "ref_class": "DocType",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": true,
+      "role_permissions": []
+    },
+    {
+      "name": "Name",
+      "caption": "Наименование",
+      "type": 0,
+      "size": null,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": false,
+      "role_permissions": []
+    },
+    {
+      "name": "Status",
+      "caption": "Статус",
+      "type": 13,
+      "size": null,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "DocStatus",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": true,
+      "role_permissions": []
+    }
+  ],
+  "role_permissions": []
+}

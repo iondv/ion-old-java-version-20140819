@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.StatDog",
+  "type": 1,
+  "caption": "Статус контракта",
+  "classname": "ContractState",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

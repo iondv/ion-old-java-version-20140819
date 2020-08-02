@@ -1,0 +1,159 @@
+{
+  "tabs": [
+    {
+      "caption": "Основная информация",
+      "fullFields": [
+        {
+          "caption": "Главное",
+          "type": 0,
+          "property": "",
+          "size": 2,
+          "maskName": null,
+          "mode": null,
+          "fields": [
+            {
+              "caption": "Платформа",
+              "type": 1,
+              "property": "Platform",
+              "size": 2,
+              "maskName": null,
+              "mode": null,
+              "fields": [],
+              "columns": [],
+              "actions": 7
+            },
+            {
+              "caption": "Тип",
+              "type": 2,
+              "property": "Type",
+              "size": 2,
+              "maskName": null,
+              "mode": 0,
+              "fields": [],
+              "columns": [],
+              "actions": 7
+            }
+          ],
+          "columns": [],
+          "actions": 7
+        },
+        {
+          "caption": "Заказчик",
+          "type": 2,
+          "property": "Customer",
+          "size": 2,
+          "maskName": null,
+          "mode": 1,
+          "fields": [],
+          "columns": [],
+          "actions": 7
+        }
+      ],
+      "shortFields": [
+        {
+          "caption": "Платформа",
+          "type": 1,
+          "property": "Platform",
+          "size": 2,
+          "maskName": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": 7
+        }
+      ]
+    },
+    {
+      "caption": "Разработчик",
+      "fullFields": [
+        {
+          "caption": "Наименование",
+          "type": 1,
+          "property": "NameFull",
+          "size": 3,
+          "maskName": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": 7
+        },
+        {
+          "caption": "Информация",
+          "type": 1,
+          "property": "StructOtd",
+          "size": 3,
+          "maskName": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": 7
+        }
+      ],
+      "shortFields": [
+        {
+          "caption": "Наименование",
+          "type": 1,
+          "property": "NameShort",
+          "size": 3,
+          "maskName": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": 7
+        }
+      ]
+    },
+    {
+      "caption": "Контракты",
+      "fullFields": [
+        {
+          "caption": "Контракты",
+          "type": 3,
+          "property": "Contracts",
+          "size": 2,
+          "maskName": null,
+          "mode": 3,
+          "fields": [],
+          "columns": [
+            {
+              "caption": "Номер",
+              "property": "Number",
+              "sorted": true
+            },
+            {
+              "caption": "Заказчик",
+              "property": "Customer",
+              "sorted": false
+            },
+            {
+              "caption": "Срок",
+              "property": "Started",
+              "sorted": true
+            },
+            {
+              "caption": "Статус",
+              "property": "State",
+              "sorted": true
+            }
+          ],
+          "actions": 7
+        }
+      ],
+      "shortFields": [
+        {
+          "caption": "Контракты",
+          "type": 3,
+          "property": "Contracts",
+          "size": 2,
+          "maskName": null,
+          "mode": 1,
+          "fields": [],
+          "columns": [],
+          "actions": 7
+        }
+      ]
+    }
+  ],
+  "actions": 12,
+  "overrideMode": 1
+}

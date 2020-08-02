@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.cost_types",
+  "type": 1,
+  "caption": "Типы стоимости(?)",
+  "classname": "CostType",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

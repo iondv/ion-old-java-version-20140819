@@ -1,0 +1,105 @@
+{
+  "key": "Kod",
+  "semantic": "Name",
+  "name": "DocStatus",
+  "caption": "Статус документа",
+  "ancestor": null,
+  "container": null,
+  "properties": [
+    {
+      "name": "Razd",
+      "caption": "Раздел",
+      "type": 0,
+      "size": null,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [
+        {
+          "role": "ANY",
+          "type": "MATRIX",
+          "matrix": [
+            {
+              "comment": "",
+              "conditions": [],
+              "result": [
+                {
+                  "key": "Utv",
+                  "value": "Утвержден"
+                },
+                {
+                  "key": "Sgn",
+                  "value": "Подписан"
+                },
+                {
+                  "key": "RTR",
+                  "value": "Возвращён"
+                },
+                {
+                  "key": "Sls",
+                  "value": "На согласовании"
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "hq": ""
+        }
+      ],
+      "selectall": false,
+      "role_permissions": []
+    },
+    {
+      "name": "Kod",
+      "caption": "Код",
+      "type": 0,
+      "size": 10,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": false,
+      "role_permissions": []
+    },
+    {
+      "name": "Name",
+      "caption": "Наименование",
+      "type": 0,
+      "size": 100,
+      "decimals": 0,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "default_value": null,
+      "ref_class": "",
+      "items_class": "",
+      "back_ref": "",
+      "binding": "",
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": [],
+      "selectall": false,
+      "role_permissions": []
+    }
+  ],
+  "role_permissions": []
+}

@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.customer_types",
+  "type": 1,
+  "caption": "Типы заказчиков(?)",
+  "classname": "CustomerType",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.FormHran",
+  "type": 1,
+  "caption": "Формат хранения",
+  "classname": "FormatHran",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

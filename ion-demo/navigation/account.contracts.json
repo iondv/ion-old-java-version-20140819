@@ -1,0 +1,12 @@
+{
+  "code": "account.contracts",
+  "type": 1,
+  "caption": "Контракты",
+  "classname": "Contract",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

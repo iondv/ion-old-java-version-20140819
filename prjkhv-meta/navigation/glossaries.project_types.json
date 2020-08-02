@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.project_types",
+  "type": 1,
+  "caption": "Типы проектов(?)",
+  "classname": "ProjectType",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

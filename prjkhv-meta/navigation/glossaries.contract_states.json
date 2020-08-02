@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.contract_states",
+  "type": 1,
+  "caption": "Этапы контрактов",
+  "classname": "ContractState",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

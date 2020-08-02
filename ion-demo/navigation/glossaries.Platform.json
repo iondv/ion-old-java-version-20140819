@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.Platform",
+  "type": 1,
+  "caption": "Платформа",
+  "classname": "Platform",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

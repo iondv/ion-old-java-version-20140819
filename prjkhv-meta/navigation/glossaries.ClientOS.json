@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.ClientOS",
+  "type": 1,
+  "caption": "Клиентские ОС",
+  "classname": "COS",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

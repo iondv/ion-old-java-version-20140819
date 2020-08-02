@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.doc_types",
+  "type": 1,
+  "caption": "Типы документов",
+  "classname": "DocType",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.FormData",
+  "type": 1,
+  "caption": "Формат данных",
+  "classname": "FormatData",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

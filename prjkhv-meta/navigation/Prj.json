@@ -1,0 +1,12 @@
+{
+  "code": "Prj",
+  "type": 1,
+  "caption": "Проект",
+  "classname": "Project",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

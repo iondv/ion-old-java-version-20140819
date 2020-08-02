@@ -1,0 +1,12 @@
+{
+  "code": "glossaries.ServOS",
+  "type": 1,
+  "caption": "Серверная ОС",
+  "classname": "SrvOS",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

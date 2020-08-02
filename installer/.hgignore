@@ -1,0 +1,12 @@
+# использовать синтаксис glob.
+syntax: glob
+#Игнорируем в репозитории дисрибутивы, модели, настройки и скомпилированные файлы
+offlineclient/distr/*.*
+offlineclient/ion/*.*
+offlineclient/IONsync*.ini
+*.exe
+
+#Пишем в репозиторий настройки отдельные файлы моделей
+syntax: regex
+#^offlineclient/ion/(?!.bat$)
+^offlineclient/ion/ion-offline-sync/ionservice.bat

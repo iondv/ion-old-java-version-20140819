@@ -1,0 +1,12 @@
+{
+  "code": "account.projects",
+  "type": 1,
+  "caption": "Информационные системы",
+  "classname": "Project",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

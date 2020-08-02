@@ -1,0 +1,52 @@
+{
+  "columns": [
+    {
+      "caption": "ID",
+      "property": "Id",
+      "sorted": true,
+      "order_number":-1
+    },
+    {
+      "caption": "Наименование",
+      "property": "NameShort",
+      "sorted": true,
+      "order_number":1
+    },
+    {
+      "caption": "Оператор",
+      "property": "Customer",
+      "sorted": true,
+      "order_number":6
+    },
+    {
+      "caption": "Тип ИС",
+      "property": "Type",
+      "sorted": true,
+      "order_number":5
+    },
+    {
+      "caption": "Дата ввода",
+      "property": "DataVvoda",
+      "sorted": true,
+      "order_number":2
+    }
+  ],
+  "details": [
+    {
+      "caption": "Контракты",
+      "type": 1,
+      "property": "Contracts",
+      "size": 2,
+      "maskName": null,
+      "order_number": 4,
+      "mode": null,
+      "fields": [],
+      "columns": [],
+      "actions": 7
+    }
+  ],
+  "actions": 7,
+  "allowSearch": true,
+  "pageSize": 25,
+  "overrideMode": 1
+}
