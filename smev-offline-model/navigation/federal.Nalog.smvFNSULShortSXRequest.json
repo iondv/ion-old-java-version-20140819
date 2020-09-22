@@ -1,0 +1,12 @@
+{
+  "code": "federal.Nalog.smvFNSULShortSXRequest",
+  "type": 1,
+  "caption": "(ФНС) Запрос кратких сведений из ЕГРЮЛ",
+  "classname": "smvFNSULShortSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

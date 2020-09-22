@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ion.framework.web</groupId>
+	<artifactId>ion-web-app</artifactId>
+	<name>Ion web application</name>
+	<packaging>war</packaging>
+	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-version>1.7</java-version>
+		<ionweb.ion.version>0.0.1-SNAPSHOT</ionweb.ion.version>
+		<ionweb.org.springframework-version>4.1.1.RELEASE</ionweb.org.springframework-version>
+		<ionweb.org.springsecurity-version>3.2.4.RELEASE</ionweb.org.springsecurity-version>
+		<ionweb.org.aspectj-version>1.6.10</ionweb.org.aspectj-version>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>war</id>
+			<properties>
+				<pom.dir.meta>meta</pom.dir.meta>
+				<pom.dir.navigation>navigation</pom.dir.navigation>
+				<pom.dir.views>view</pom.dir.views>
+				<pom.domain.package>undefined</pom.domain.package>
+				<pom.db.driver>enter driver class here</pom.db.driver>
+				<pom.db.url>enter database url here</pom.db.url>
+				<pom.db.user>enter database user here</pom.db.user>
+				<pom.db.password>enter database password here</pom.db.password>
+				<pom.db.dialect>enter hibernate dialect here</pom.db.dialect>
+				<pom.app.theme>ionweb-jt</pom.app.theme>
+				<pom.filter></pom.filter>
+			</properties>
+		</profile>
+		<profile>
+			<id>develop</id>
+			<properties>
+				<pom.filter>dev.properties</pom.filter>
+			</properties>
+			<!--  
+			<dependencies>
+				<dependency>
+					<groupId>ion.tests</groupId>
+					<artifactId>pm-domain</artifactId>
+					<version>0.0.1-SNAPSHOT</version>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+			-->
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
+	<dependencies>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${ionweb.org.springframework-version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${ionweb.org.springframework-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${ionweb.org.springsecurity-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${ionweb.org.springsecurity-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${ionweb.org.springsecurity-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- GSON -->
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+
+		<!-- ION -->
+				
+		<dependency>
+			<groupId>ion.framework.core</groupId>
+			<artifactId>ion-core</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+
+		 <dependency>
+            <groupId>ion.framework.core</groupId>
+            <artifactId>ion-auth</artifactId>
+            <version>${ionweb.ion.version}</version>
+        </dependency>
+        
+		<dependency>
+			<groupId>ion-acl</groupId>
+			<artifactId>ion-acl</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+        
+		<dependency>
+			<groupId>ion.framework.core</groupId>
+			<artifactId>ion-modeling</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ion.framework.core</groupId>
+			<artifactId>ion-meta</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ion.framework.core</groupId>
+			<artifactId>ion-dao</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ion.framework.core</groupId>
+			<artifactId>ion-viewmodel</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>ion.framework.web</groupId>
+			<artifactId>ion-web-util</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>ion.framework.integration</groupId>
+			<artifactId>ion-integration-core</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>ion.offline.transport</groupId>
+			<artifactId>ion-offline-transport</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ion-db-search</groupId>
+			<artifactId>ion-db-search</artifactId>
+			<version>${ionweb.ion.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${ionweb.org.aspectj-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- @Inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JDBC connectors -->
+		<dependency>
+			<groupId>cn.guoyukun.jdbc</groupId>
+			<artifactId>mssql-jdbc4</artifactId>
+			<version>16.2-b04</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>jdbc6</artifactId>
+			<version>11.2.0.4</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.35</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901.jdbc4</version>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.firebirdsql.jdbc</groupId>
+			<artifactId>jaybird</artifactId>
+			<version>2.2.5</version>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <version>1.4.184</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.12</version>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.13-beta1</version>
+		</dependency>		
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>
+		</dependency>
+		
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<additionalProjectnatures>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<filters>
+						<filter>${pom.filter}</filter>
+					</filters>
+					<webResources>
+						<resource>
+							<filtering>true</filtering>
+							<directory>src/main/webapp/WEB-INF</directory>
+							<targetPath>WEB-INF</targetPath>
+							<includes>
+								<include>*.properties</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>exec-maven-plugin</artifactId> 
+				<version>1.2.1</version> <configuration> <mainClass>org.test.int1.Main</mainClass> 
+				</configuration> </plugin> -->
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,12 @@
+{
+  "code": "federal.MVDRF.PFSXRequestPension2",
+  "type": 1,
+  "caption": "(МВД) Сведения из органа, осуществляющего пенсионное обеспечение, о назначенной пенсии",
+  "classname": "PFSXRequestPension2",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

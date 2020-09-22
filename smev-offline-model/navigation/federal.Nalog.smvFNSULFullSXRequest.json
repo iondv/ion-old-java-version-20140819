@@ -1,0 +1,12 @@
+{
+  "code": "federal.Nalog.smvFNSULFullSXRequest",
+  "type": 1,
+  "caption": "(ФНС) Запрос выписки из ЕГРЮЛ",
+  "classname": "smvFNSULFullSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

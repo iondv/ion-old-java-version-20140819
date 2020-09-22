@@ -1,0 +1,12 @@
+{
+  "code": "regional.bsClsRqstFsmev",
+  "type": 1,
+  "caption": "Базовый класс для запросов ФСМЭВ",
+  "classname": "bsClsRqstFsmev",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

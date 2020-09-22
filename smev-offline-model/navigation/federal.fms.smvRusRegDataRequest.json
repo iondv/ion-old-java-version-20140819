@@ -1,0 +1,12 @@
+{
+  "code": "federal.fms.smvRusRegDataRequest",
+  "type": 1,
+  "caption": "(ФМС) Запрос сведений о регистрации по месту жительства гражданина РФ",
+  "classname": "smvRusRegDataRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

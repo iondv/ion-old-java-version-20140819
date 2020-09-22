@@ -1,0 +1,12 @@
+{
+  "code": "federal.GUFSS.smvParentsSXRequest",
+  "type": 1,
+  "caption": "(ФСС) Запрос cведений об отсутствии регистрации родителей в ТО ФСС и о неполучении ими (им) единовременного пособия",
+  "classname": "smvParentsSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

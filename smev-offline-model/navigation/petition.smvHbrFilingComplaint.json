@@ -1,0 +1,12 @@
+{
+  "code": "petition.smvHbrFilingComplaint",
+  "type": 1,
+  "caption": "Подача жалобы на решения или действия (бездействие) органов исполнительной власти края, органов местного самоуправления края при оказании государственных или муниципальных услуг",
+  "classname": "smvHbrFilingComplaint",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

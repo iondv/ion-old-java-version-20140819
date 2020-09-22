@@ -1,0 +1,42 @@
+<split-area>
+  <div name="master-block">
+    <!-- MASTER AREA -->
+    <div ion-breadcrumbs></div>
+    <h1>{{title}}</h1>
+    {{warning}}  
+    <div id="form" class="form-wrapper" ng-app="form">
+	<form id="main" name="main" class="frm obj" method="post" enctype="multipart/form-data" novalidate>
+	<div class="toolbar">
+        <button type="button" ng-show="isActionAvailable(action)" ng-disabled="!isActionEnabled(action)" title="{{action.caption}}" class="btn actionbtn" ng-click="execAction(action)" ng-repeat="action in vm.actions track by $index">
+            <span class="icon icon-small iconfont-{{(action.id).toLowerCase()}}"></span>
+            <span class="btn-text">{{action.caption}}</span>
+        </button>
+	</div>
+
+    <div class="form-body" ng-show="vm">
+	    <div class="form-tab" ng-show="currentTab === $index" ng-repeat="tab in vm.tabs track by $index">
+	      <h2>{{tab.caption}}</h2>
+	      <div class="full-view">
+	          <div ion-form-field ng-repeat="field in tab.fullViewFields track by $index"></div>
+	      </div>
+	    </div>
+    </div>
+    <div ion-loader ng-hide="vm"></div>
+  </form>
+</div>
+  </div>  
+      
+  <div name="slave-block">
+    <!-- SLAVE AREA -->
+	<div class="roll short-view" ng-class="{active:currentTab === $index,collapsed:(notCollapsedTab !== $index || currentTab === $index)}" ng-repeat="tab in vm.tabs track by $index">
+		<div class="roll-header unselectable trigger">
+			<h3><i ng-click="uncollapseTab($index)"></i><span ng-click="showTab($index)">{{tab.caption}}</span></h3>
+		</div>
+		<div class="roll-content short-view-content">
+			<div class="field" ng-repeat="col in tab.shortViewFields">
+				<div ion-detail-field ion-columns="tab.shortViewFields"></div>
+			</div>
+		</div>
+	</div>	  
+  </div>
+</split-area>

@@ -1,0 +1,12 @@
+{
+  "code": "federal.smvFederalLicenseRequest",
+  "type": 1,
+  "caption": "(Рособрнадзор) Запрос на получение выписки со сведениями о лицензии",
+  "classname": "smvFederalLicenseRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

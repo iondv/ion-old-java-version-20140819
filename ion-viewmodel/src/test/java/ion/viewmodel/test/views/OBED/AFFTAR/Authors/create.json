@@ -1,0 +1,33 @@
+{
+  "tabs": [
+    {
+      "caption": "Afroman",
+      "fullFields": [
+        {
+          "caption": "Shlyapa",
+          "type": 1,
+          "property": "Name",
+          "size": 2,
+          "maskName": null,
+          "mask": null,
+          "mode": null,
+          "fields": [],
+          "columns": [],
+          "actions": 7,
+          "order_number": 0,
+          "required": false,
+          "visibility": "alert(\u0027Ti loh!\u0027);",
+          "enablement": null,
+          "obligation": null,
+          "validators": [
+            "Mickey",
+            "preved"
+          ]
+        }
+      ],
+      "shortFields": []
+    }
+  ],
+  "actions": 56,
+  "overrideMode": 1
+}

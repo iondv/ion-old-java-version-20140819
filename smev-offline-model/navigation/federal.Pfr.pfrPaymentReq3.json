@@ -1,0 +1,12 @@
+{
+  "code": "federal.Pfr.pfrPaymentReq3",
+  "type": 1,
+  "caption": "(ПФР) Запрос на получение сведений о размере пенсии застрахованного лица за период",
+  "classname": "pfrPaymentReq3",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,12 @@
+{
+  "code": "federal.Nalog.smvFNSIPFullSXRequest",
+  "type": 1,
+  "caption": "(ФНС) Запрос выписки из ЕГРИП",
+  "classname": "smvFNSIPFullSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

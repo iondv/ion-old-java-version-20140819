@@ -1,0 +1,13 @@
+{
+  "is_struct": false,
+  "key": "",
+  "semantic": "ouid| |pettOrg| |pettOrg",
+  "name": "bsClsRqstFsmev",
+  "caption": "Базовый класс для запросов ФСМЭВ",
+  "ancestor": "RegionalService",
+  "container": null,
+  "creationTracker": "",
+  "changeTracker": "",
+  "properties": [],
+  "role_permissions": []
+}

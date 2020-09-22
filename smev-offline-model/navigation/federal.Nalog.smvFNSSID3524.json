@@ -1,0 +1,12 @@
+{
+  "code": "federal.Nalog.smvFNSSID3524",
+  "type": 1,
+  "caption": "(ФНС) Запрос сведений о среднесписочной численности работников за предшествующий календарный год",
+  "classname": "smvFNSSID3524",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,12 @@
+{
+  "code": "federal.RNDR01001.subsoilRegisterSimpleRequest",
+  "type": 1,
+  "caption": "(Роснедра) Запрос сведений из реестра лицензий на пользование недрами",
+  "classname": "subsoilRegisterSimpleRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

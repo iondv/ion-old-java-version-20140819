@@ -1,0 +1,73 @@
+<split-area>
+  <div name="master-block" ng-controller="listController as listCtrl">
+    <!-- MASTER AREA -->
+    <div ion-breadcrumbs></div>
+    <h1>{{classCaption}}</h1>   
+    <div class="toolbar" style="z-index:5;">
+      <button type="button" ng-show="isActionAvailable(action)" ng-disabled="!isActionEnabled(action)" title="{{action.caption}}" class="btn actionbtn" ng-click="execAction(action)" ng-repeat="action in vm.actions track by $index">
+        <span class="icon icon-small iconfont-{{(action.id).toLowerCase()}}"></span>
+        <span class="btn-text">{{action.caption}}</span>
+      </button>
+      <button class="actionbtn btn" title="Печать" ng-click="searchActions.print()">
+        <span class="icon icon-small iconfont-page-blank"></span><span class="btn-text">Печать</span>
+      </button>
+      <button class="actionbtn btn" title="Экспорт в Excel" ng-click="searchActions.excel()">
+        <span class="icon icon-small iconfont-file-xls"></span><span class="btn-text">Экспорт в Excel</span>
+      </button>
+      <button class="actionbtn btn" title="Поиск" ng-click="searchActions.search()">
+        <span class="icon icon-small iconfont-search"></span><span class="btn-text">Поиск</span>
+      </button>
+      <button class="actionbtn btn" title="Сброс" ng-show="filterString != null" ng-click="searchActions.cancelSearch()">
+        <span class="icon icon-small iconfont-search"></span><span class="btn-text">Сброс</span>
+      </button>
+    </div>   
+    <ion-table>
+      <table id="main-list" class="table zebra" ng-show="list!==null">
+        <thead>
+          <tr>
+            <th ng-show="vm.hasBulkActions"><input type="checkbox" class="select-all row-selector" ng-model="selectAll.status" ng-change="selectAll.change()"/></th>
+            <th class="sortable {{col.size}}" title="{{col.caption}}" ng-repeat="col in vm.columns" ng-click="changeSorting(col)" ng-class="{active:col.property === sort.option.property,desc:(col.property === sort.option.property && sort.option.desc === true)}"><span>{{col.caption}}</span></th>
+          </tr>          
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in list track by $index |orderBy:sort.column:sort.descending" ng-click="showDetails($index,$event)" ng-class="{focused:item === detailItem}">
+            <td ng-show="vm.hasBulkActions"><input type="checkbox" class="row-selector" ng-model="itemsToDelete[(item.itemInfo[0]+'@'+item.itemInfo[1])]" ng-click=" $event.stopPropagation();"/></td>
+            <td ng-repeat="col in vm.columns" ng-init="index = $parent.$index">
+              <div ion-list-field></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-table>
+    <div class="spinner" ng-hide="list!==null">
+	  <div class="bounce1"></div>
+	  <div class="bounce2"></div>
+	  <div class="bounce3"></div>
+	</div>
+    <div ion-paginator></div>
+  </div>  
+      
+  <div name="slave-block" ng-controller="detailsController as detailsCtrl">
+    <!-- SLAVE AREA -->
+    <div id="details" class="details" ng-model="currentTab">
+    <!--  
+    <div>
+		<button type="button" ng-show="isActionAvailable(action)" ng-disabled="!isActionEnabled(action)" title="{{action.caption}}" class="btn actionbtn" ng-click="execAction(action)" ng-repeat="action in detailModel.actions track by $index">
+            <span class="icon icon-small iconfont-{{(action.id).toLowerCase()}}"></span>
+            <span class="btn-text">{{action.caption}}</span>
+        </button>
+	</div>
+	-->
+      <div class="roll short-view" ng-class="{collapsed:currentTab !== $index}" ng-repeat="tab in detailModel.tabs">        
+        <div class="roll-header unselectable trigger" ng-click="collapseTab($index)">
+          <h3><i></i><span>{{tab.caption}}</span></h3>
+        </div>
+        <div class="roll-content short-view-content">
+          <div class="field" ng-repeat="col in tab.fullViewFields" ng-init="index = -1">
+            <div ion-detail-field></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</split-area>

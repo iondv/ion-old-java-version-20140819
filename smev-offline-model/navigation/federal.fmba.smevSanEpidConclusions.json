@@ -1,0 +1,12 @@
+{
+  "code": "federal.fmba.smevSanEpidConclusions",
+  "type": 1,
+  "caption": "(ФМБА) Санитарно-эпидемиологические заключения",
+  "classname": "smevSanEpidConclusions",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

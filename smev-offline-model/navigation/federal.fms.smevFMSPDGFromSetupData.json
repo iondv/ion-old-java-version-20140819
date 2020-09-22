@@ -1,0 +1,12 @@
+{
+  "code": "federal.fms.smevFMSPDGFromSetupData",
+  "type": 1,
+  "caption": "(ФМС) Запрос паспортного досье  гражданина РФ по установочным данным",
+  "classname": "smevFMSPDGFromSetupData",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

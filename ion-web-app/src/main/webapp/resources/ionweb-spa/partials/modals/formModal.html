@@ -1,0 +1,19 @@
+<div id="frm-dlg" class="form-modal-dialog" >
+	<div id="form" class="form-wrapper">
+		<form id="main" name="main" class="frm obj" method="post" enctype="multipart/form-data" novalidate>
+			<div class="toolbar">
+				<button type="button" ng-click="showTab($index)" class="btn actionbtn" ng-repeat="tab in vm.tabs track by $index">{{tab.caption}}</button>
+			</div>
+		
+		    <div class="form-body" ng-show="vm">
+			    <div class="form-tab" ng-repeat="tab in vm.tabs track by $index" ng-show="currentTab==$index">
+			      <div class="full-view">
+			          <div ion-form-field ng-repeat="field in tab.fullViewFields track by $index"></div>
+			      </div>
+			    </div>
+		    </div>
+		
+		    <div ion-loader ng-hide="vm"></div>
+	  	</form>
+	</div>
+</div>

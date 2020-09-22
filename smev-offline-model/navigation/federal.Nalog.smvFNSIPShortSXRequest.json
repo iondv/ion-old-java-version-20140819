@@ -1,0 +1,12 @@
+{
+  "code": "federal.Nalog.smvFNSIPShortSXRequest",
+  "type": 1,
+  "caption": "(ФНС) Запрос кратких сведений из ЕГРИП",
+  "classname": "smvFNSIPShortSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

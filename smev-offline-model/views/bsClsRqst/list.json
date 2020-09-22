@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "sorted": true,
+      "caption": "Дата запроса",
+      "type": 1,
+      "property": "createDate",
+      "size": 2,
+      "maskName": null,
+      "mask": null,
+      "mode": null,
+      "fields": [],
+      "columns": [],
+      "actions": 7,
+      "order_number": 61,
+      "required": false,
+      "visibility": null,
+      "enablement": null,
+      "obligation": null
+    },
+    {
+      "sorted": true,
+      "caption": "Дата модификации",
+      "type": 1,
+      "property": "timeStamp",
+      "size": 2,
+      "maskName": null,
+      "mask": null,
+      "mode": null,
+      "fields": [],
+      "columns": [],
+      "actions": 7,
+      "order_number": 41,
+      "required": false,
+      "visibility": null,
+      "enablement": null,
+      "obligation": null
+    },
+    {
+      "sorted": true,
+      "caption": "Статус",
+      "type": 1,
+      "property": "statusRqst",
+      "size": 2,
+      "maskName": null,
+      "mask": null,
+      "mode": null,
+      "fields": [],
+      "columns": [],
+      "actions": 7,
+      "order_number": 100261,
+      "required": false,
+      "visibility": null,
+      "enablement": null,
+      "obligation": null
+    }
+  ],
+  "details": [],
+  "actions": 7,
+  "allowSearch": false,
+  "pageSize": null,
+  "overrideMode": 0
+}

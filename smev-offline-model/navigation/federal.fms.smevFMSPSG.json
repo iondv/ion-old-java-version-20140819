@@ -1,0 +1,12 @@
+{
+  "code": "federal.fms.smevFMSPSG",
+  "type": 1,
+  "caption": "(ФМС) Запрос паспортного досье гражданина Российской Федерации по СНИЛС",
+  "classname": "smevFMSPSG",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

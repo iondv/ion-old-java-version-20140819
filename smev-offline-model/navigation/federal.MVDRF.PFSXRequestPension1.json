@@ -1,0 +1,12 @@
+{
+  "code": "federal.MVDRF.PFSXRequestPension1",
+  "type": 1,
+  "caption": "(МВД) Сведения из органа, производящего выплату пенсии, о получении пенсии на месяц установления доплаты",
+  "classname": "PFSXRequestPension1",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,12 @@
+{
+  "code": "federal.KaznRos.unifoExpPaymentFl",
+  "type": 1,
+  "caption": "(ФК) Запрос на экспорт платежей ФЛ",
+  "classname": "unifoExpPaymentFl",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

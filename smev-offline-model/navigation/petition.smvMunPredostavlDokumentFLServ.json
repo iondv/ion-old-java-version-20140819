@@ -1,0 +1,12 @@
+{
+  "code": "petition.smvMunPredostavlDokumentFLServ",
+  "type": 1,
+  "caption": "Заявление на предоставление документов (технического паспорта здания (строения) или выписки из него, поэтажного плана, плана земельного участка, экспликации к поэтажному  плану, справки об инвентаризационной стоимости объекта недвижимости и иных документов) (ФЛ)",
+  "classname": "smvMunPredostavlDokumentFLServ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

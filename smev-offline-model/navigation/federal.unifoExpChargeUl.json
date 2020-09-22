@@ -1,0 +1,12 @@
+{
+  "code": "federal.unifoExpChargeUl",
+  "type": 1,
+  "caption": "(ФК) Экспорт начислений из ГИС ГМП для ЮЛ",
+  "classname": "unifoExpChargeUl",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

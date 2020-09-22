@@ -1,0 +1,12 @@
+{
+  "code": "federal.KaznRos.unifoExpChargeFl",
+  "type": 1,
+  "caption": "(ФК) Экспорт начислений из ГИС ГМП для ФЛ",
+  "classname": "unifoExpChargeFl",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

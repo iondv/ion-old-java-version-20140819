@@ -1,0 +1,12 @@
+{
+  "code": "federal.smvFSFRReestrCB",
+  "type": 1,
+  "caption": "(ФСФР) Запрос сведений из реестра ценных бумаг",
+  "classname": "smvFSFRReestrCB",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

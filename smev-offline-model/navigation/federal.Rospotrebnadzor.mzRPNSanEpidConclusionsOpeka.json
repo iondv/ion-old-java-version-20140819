@@ -1,0 +1,12 @@
+{
+  "code": "federal.Rospotrebnadzor.mzRPNSanEpidConclusionsOpeka",
+  "type": 1,
+  "caption": "(Роспотребнадзор) Запрос справки о соответствии (несоответствии) жилых помещений (зданий) требованиям санитарного законодательства при оформлении опеки или попечительства",
+  "classname": "mzRPNSanEpidConclusionsOpeka",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

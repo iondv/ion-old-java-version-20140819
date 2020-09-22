@@ -1,0 +1,12 @@
+{
+  "code": "federal.Pfr.pfrPaymentReq5",
+  "type": 1,
+  "caption": "(ПФР) Запрос на получение сведений о размере социальных выплат  застрахованного лица за период (включая пенсию)",
+  "classname": "pfrPaymentReq5",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

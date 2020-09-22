@@ -1,0 +1,81 @@
+@CHARSET "UTF-8";
+body {
+	margin:0px;
+	font-family:Calibri, Verdana, Arial, sans-serif;
+	font-size:11pt;
+    line-height:1.3em;
+    background-color: #ffffff;
+    background-image: url('../img/Curve.png');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+input {
+	font-family:Calibri, Verdana, Arial, sans-serif;
+	font-size:1em;
+    line-height:1.3em;
+}
+button {
+	font-family:Calibri, Verdana, Arial, sans-serif;
+	font-size:1em;
+}
+.clearfix {
+	clear: both;
+}
+
+.form-block {
+	background-color: #548dd4;
+	font-size: 1.2em;
+	color: #ffffff;
+	width: 18em;
+	margin: 5% auto;
+	padding: 0.9em;
+	border: 1px solid #000000;
+	box-shadow: 0.5em 0.5em 1em #555555;
+	border-radius: 1em;	
+}
+.form-block h3 {
+	margin: 0.5em 0;
+}
+.error-message-block {
+	background: #FF0033;
+	border: 1px solid #000000;
+	padding: 0.5em;
+	margin: 0;
+}
+.form-block form {
+	margin: 0;
+}
+.form-block form label {
+	display: block;
+	margin: 0.5em 0;
+	line-height: 1.2em;
+	min-height: 1.2em;
+}
+.form-block form label input[type=text], input[type=password] {
+	min-width: 12em;
+	border: 1px solid #000000;
+	font-size: 0.9em;
+	font-family: inherit;
+	float:right;
+	height:1.3em;
+}
+.form-block form button {
+	border: none;
+	background: transparent;
+	color: inherit;
+	margin:2px;
+}
+.form-block form  button:hover {
+	color:#ffffff;
+	text-shadow: 0 0 1.2em #ffffff;
+	border: 2px solid #ffffff;	
+	margin: 0;
+}
+.form-block form  button:active {
+	color: #245DA4;
+	text-shadow: 0 0 1.2em #043D84;
+}
+.form-block form .button-holder {
+	text-align:right;
+}

@@ -1,0 +1,12 @@
+{
+  "code": "federal.SPZRequest",
+  "type": 1,
+  "caption": "(Роспотребнадзор) Запрос на получение сведений из сан-эпид заключений о видах деятельности",
+  "classname": "SPZRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

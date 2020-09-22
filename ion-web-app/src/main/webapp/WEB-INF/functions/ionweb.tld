@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>ion</short-name>
+    <uri>http://www.ion.com/webapptlds</uri>
+    <function>
+   		<name>property</name>
+    	<function-class>ion.web.app.jstl.ItemAccess</function-class>
+    	<function-signature>ion.core.data.Item.Property property(ion.core.IItem, java.lang.String)</function-signature>
+    </function>   
+    <function>
+   		<name>itemJson</name>
+    	<function-class>ion.web.app.jstl.ItemAccess</function-class>
+    	<function-signature>java.lang.String itemJson(ion.core.IItem)</function-signature>
+    </function>
+    <function>
+   		<name>navItemId</name>
+    	<function-class>ion.web.app.jstl.ItemAccess</function-class>
+    	<function-signature>java.lang.String navItemId(ion.core.IItem)</function-signature>
+    </function>
+    <function>
+   		<name>fieldId</name>
+    	<function-class>ion.web.app.jstl.ItemAccess</function-class>
+    	<function-signature>java.lang.String fieldId(ion.viewmodel.view.IField)</function-signature>
+    </function>
+    <function>
+   		<name>fieldFunc</name>
+    	<function-class>ion.web.app.jstl.ItemAccess</function-class>
+    	<function-signature>java.lang.String fieldFunc(ion.viewmodel.view.IField)</function-signature>
+    </function>
+    <function>
+   		<name>fieldExpr</name>
+    	<function-class>ion.web.app.jstl.ItemAccess</function-class>
+    	<function-signature>java.lang.String prepareFieldExpression(java.lang.String)</function-signature>
+    </function>
+    <function>
+   		<name>rowItemId</name>
+    	<function-class>ion.web.app.jstl.ItemAccess</function-class>
+    	<function-signature>java.lang.String rowItemId(ion.core.IItem)</function-signature>
+    </function>
+    <function>
+   		<name>fieldMask</name>
+    	<function-class>ion.web.app.jstl.ItemAccess</function-class>
+    	<function-signature>java.lang.String fieldMask(ion.viewmodel.view.IField, java.lang.Object)</function-signature>
+    </function>
+    <function>
+   		<name>url</name>
+    	<function-class>ion.web.app.jstl.Urls</function-class>
+    	<function-signature>java.lang.String Url(java.lang.String)</function-signature>
+    </function>
+    <function>
+   		<name>itemUrl</name>
+    	<function-class>ion.web.app.jstl.Urls</function-class>
+    	<function-signature>java.lang.String itemUrl(ion.web.app.util.PageContext, ion.core.IItem)</function-signature>
+    </function>
+    <function>
+   		<name>fileUrl</name>
+    	<function-class>ion.web.app.jstl.Urls</function-class>
+    	<function-signature>java.lang.String fileUrl(java.lang.String)</function-signature>
+    </function>
+    <function>
+        <name>fileName</name>
+        <function-class>ion.web.app.jstl.Urls</function-class>
+        <function-signature>java.lang.String fileName(java.lang.String)</function-signature>    
+    </function>
+    <function>
+   		<name>collectionUrl</name>
+    	<function-class>ion.web.app.jstl.Urls</function-class>
+    	<function-signature>java.lang.String collectionUrl(ion.web.app.util.PageContext, ion.core.IItem, java.lang.String)</function-signature>
+    </function>
+	<function>
+   		<name>setContains</name>
+    	<function-class>ion.web.app.jstl.EvalUtils</function-class>
+    	<function-signature>java.lang.Boolean setContains(java.util.Set, java.lang.String)</function-signature>
+    </function>    
+    <function>
+   		<name>strcmp</name>
+    	<function-class>ion.web.app.jstl.EvalUtils</function-class>
+    	<function-signature>java.lang.Boolean strcmp(java.lang.Object, java.lang.Object)</function-signature>
+    </function>
+    <function>
+   		<name>dateToStr</name>
+    	<function-class>ion.web.app.jstl.EvalUtils</function-class>
+    	<function-signature>java.lang.String dateToStr(java.util.Date)</function-signature>
+    </function>
+    <function>
+   		<name>json</name>
+    	<function-class>ion.web.app.jstl.EvalUtils</function-class>
+    	<function-signature>java.lang.String toJson(java.lang.Object)</function-signature>
+    </function>
+    <function>
+   		<name>jsEscape</name>
+    	<function-class>ion.web.app.jstl.EvalUtils</function-class>
+    	<function-signature>java.lang.String jsEscape(java.lang.String)</function-signature>
+    </function>
+    <function>
+   		<name>getDetailModel</name>
+    	<function-class>ion.web.app.AbstractListController</function-class>
+    	<function-signature>ion.viewmodel.view.IFormViewModel getDetailModel(ion.viewmodel.view.IListViewModel, ion.core.IItem)</function-signature>
+    </function>
+</taglib>

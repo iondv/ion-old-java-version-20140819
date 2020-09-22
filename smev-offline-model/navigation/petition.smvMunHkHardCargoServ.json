@@ -1,0 +1,12 @@
+{
+  "code": "petition.smvMunHkHardCargoServ",
+  "type": 1,
+  "caption": "Заявление на выдачу специального разрешения на перевозку крупногабаритного и (или) тяжеловесного груза по автомобильным дорогам общего пользования местного значения муниципального образования",
+  "classname": "smvMunHkHardCargoServ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

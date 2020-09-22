@@ -1,0 +1,12 @@
+{
+  "code": "federal.MVDRF.PFSXRequest",
+  "type": 1,
+  "caption": "(МВД) Запрос сведений из органа, производящего выплату пенсии, о прекращении выплаты или неполучении пенсии за выслугу лет",
+  "classname": "PFSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

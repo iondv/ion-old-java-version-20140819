@@ -1,0 +1,12 @@
+{
+  "code": "petition.smvMunLandPropPUServ",
+  "type": 1,
+  "caption": "Заявление на предоставление юридическим лицам в постоянное (бессрочное) пользование, в безвозмездное пользование, аренду земельных участков, находящихся в собственности муниципального образования",
+  "classname": "smvMunLandPropPUServ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

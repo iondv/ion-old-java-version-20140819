@@ -1,0 +1,12 @@
+{
+  "code": "petition.smvHbrOhotBiletAnulServ",
+  "type": 1,
+  "caption": "Заявление на аннулирование охотничьих билетов единого федерального образца",
+  "classname": "smvHbrOhotBiletAnulServ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

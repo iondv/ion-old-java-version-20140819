@@ -1,0 +1,12 @@
+{
+  "code": "federal.MHS.smvSID3435SXRequest",
+  "type": 1,
+  "caption": "(МЧС) Запрос заключений органа ГПН о соблюдении на объектах лицензии требований пожарной безопасности",
+  "classname": "smvSID3435SXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

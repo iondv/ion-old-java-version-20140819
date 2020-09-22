@@ -1,0 +1,12 @@
+{
+  "code": "federal.roskomnadzor.SmiCertMZ",
+  "type": 1,
+  "caption": "(Роскомнадзор) Запрос сведений из свидетельства СМИ",
+  "classname": "SmiCertMZ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

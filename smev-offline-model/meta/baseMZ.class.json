@@ -1,0 +1,38 @@
+{
+  "is_struct": false,
+  "key": "",
+  "semantic": "ouid| |pettOrg",
+  "name": "baseMZ",
+  "caption": "Базовый межведомственный запрос",
+  "ancestor": "FederalService",
+  "container": null,
+  "creationTracker": "",
+  "changeTracker": "",
+  "properties": [
+    {
+      "order_number": 111,
+      "name": "caseNumber",
+      "caption": "Номер запроса в ведомстве",
+      "type": 0,
+      "size": null,
+      "decimals": null,
+      "nullable": true,
+      "readonly": false,
+      "indexed": false,
+      "unique": false,
+      "autoassigned": false,
+      "default_value": null,
+      "ref_class": null,
+      "items_class": null,
+      "back_ref": null,
+      "binding": null,
+      "sel_conditions": [],
+      "sel_sorting": [],
+      "selection": null,
+      "selectall": true,
+      "role_permissions": [],
+      "index_search": false
+    }
+  ],
+  "role_permissions": []
+}

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<default-servlet-handler />
+	
+	<annotation-driven>
+		<message-converters>
+			<beans:bean class="ion.web.app.GSONMessageConverter" />
+		</message-converters>
+	</annotation-driven>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/*"/>
+			<beans:bean id="noCacheWebContentInterceptor"
+                      class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+            	<beans:property name="cacheSeconds" value="0"/>
+            	<beans:property name="useExpiresHeader" value="true"/>
+            	<beans:property name="useCacheControlHeader" value="true"/>
+            	<beans:property name="useCacheControlNoStore" value="true"/>
+        	</beans:bean>			
+		</interceptor>
+	</interceptors>
+	
+	<beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="appProps">
+  		<beans:property name="locations">
+  			<beans:list>
+  				<beans:value>WEB-INF/db.properties</beans:value>
+  				<beans:value>WEB-INF/model.properties</beans:value>
+  				<beans:value>WEB-INF/ionweb.properties</beans:value>
+  			</beans:list>
+  		</beans:property>
+	    <beans:property name="fileEncoding" value="UTF-8" />
+ 	</beans:bean>		
+	
+	<beans:bean name="servletPaths" class="ion.web.util.com.ServletPaths" />
+	<beans:bean name="urlFactory" class="ion.web.app.UrlFactory">
+		<beans:property name="servletPaths" ref="servletPaths" />
+	</beans:bean> 
+	<beans:bean name="appsList" class="ion.web.util.com.AppList" /> 
+		 
+	<beans:bean name="themeResourceHandler" class="ion.web.util.com.ThemeResourceHandler">
+		<beans:property name="themeDir" value="${app.themeDir}" />
+	</beans:bean>
+	<beans:bean name="logger" class="ion.web.util.com.WebAppLogger" />
+
+	<beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<beans:property name="order" value="-1"/>
+    	<beans:property name="urlMap">
+        	<beans:map>
+            	<beans:entry key="/theme/**" value-ref="themeResourceHandler"/>
+        	</beans:map>
+    	</beans:property>
+	</beans:bean>
+	
+	<resources mapping="/files/**" location="/resources/files/" order="-2"/>
+	
+	<beans:bean id="db" class="org.springframework.jndi.JndiObjectFactoryBean">
+    	<beans:property name="jndiName" value="java:comp/env/${jndi.db}" />
+	</beans:bean>	
+	
+	<!-- 
+	<beans:bean name="db" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<beans:property name="driverClassName" value="${db.driver}" />
+    	<beans:property name="url" value="${db.url}" />
+    	<beans:property name="username" value="${db.user}" />
+    	<beans:property name="password" value="${db.password}" />
+	</beans:bean>
+	-->
+    <!--  	
+    	<beans:property name="minPoolSize" value="1" />
+		<beans:property name="maxPoolSize" value="20" />
+		<beans:property name="idleConnectionTestPeriod" value="300"/>
+		<beans:property name="acquireIncrement" value="1" />
+		<beans:property name="testConnectionOnCheckin" value="true" />
+		<beans:property name="maxIdleTimeExcessConnections" value="240" />
+	</beans:bean>
+	-->
+
+	<beans:bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<beans:property name="dataSource" ref="db"/>		
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">${db.dialect}</beans:prop>
+				<beans:prop key="hibernate.connection.charSet">UTF-8</beans:prop>
+				<!--  <beans:prop key="hibernate.show_sql">true</beans:prop> -->
+				<!--  <beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop> -->
+			</beans:props>
+		</beans:property>
+		<beans:property name="packagesToScan">
+			<beans:array>
+				<!--  <beans:value>${domain.package}</beans:value> -->
+				<beans:value>ion.framework.changelog.domain</beans:value>
+				<beans:value>ion.auth.persistence</beans:value>
+				<beans:value>ion.framework.acl.entity</beans:value>
+				<beans:value>ion.framework.digisign</beans:value>
+			</beans:array>
+		</beans:property>
+	</beans:bean>
+	
+	<beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />	
+	
+	<beans:bean id="authContext" class="ion.web.app.util.AuthContext">
+	</beans:bean>	
+	 
+	<beans:bean id="fullTextSearchAdapter" class="ion.db.search.MySQLFulltextSearch">
+		<beans:property name="dataSource" ref="db" />
+	</beans:bean>
+			
+	<beans:bean id="meta" class="ion.framework.meta.IonMetaRepository">
+		<beans:property name="logger" ref="logger" />
+	</beans:bean>
+	
+	<beans:bean id="wfMeta" class="ion.framework.meta.workflow.IonWorkflowMetaRepository">
+		<beans:property name="workflowDirectory" value="${wf.directory}"/>
+	</beans:bean>
+	
+	<beans:bean id="workflow" class="ion.framework.dao.workflow.WorkFlowProvider">
+		<beans:property name="dataSource" ref="db" />
+		<beans:property name="metaRepository" ref="wfMeta" />
+	</beans:bean>	
+	
+	<beans:bean id="changeLogger" class="ion.framework.changelog.IonChangelog" >
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+		<beans:property name="authContext" ref="authContext" />
+	</beans:bean>
+	
+	<beans:bean id="data" class="ion.framework.dao.jdbc.JdbcDataRepository">
+		<beans:constructor-arg name="connectionProvider">
+			<beans:bean class="ion.web.app.service.JdbcConnectionProvider">
+				<beans:constructor-arg name="dataSource" ref="db" />
+			</beans:bean>
+		</beans:constructor-arg>
+		<beans:property name="metaRepository" ref="meta" />
+		<beans:property name="forceCascadeDeletions" value="false" />
+		<beans:property name="logger" ref="logger" />
+		<beans:property name="showSql" value="true" />
+	</beans:bean>	
+	
+	<beans:bean id="navmodel" class="ion.viewmodel.com.JSONNavigationModel">
+		<beans:property name="metaRepository" ref="meta" />
+		<beans:property name="logger" ref="logger" />
+	</beans:bean>
+	
+	<beans:bean id="viewmodel" class="ion.viewmodel.com.JSONViewModelRepository">
+		<beans:property name="logger" ref="logger" />
+	</beans:bean>	
+	
+	<beans:bean id="pathResolver" class="ion.web.app.util.PathResolver">
+		<beans:constructor-arg name="metaRepository" ref="meta" />
+		<beans:constructor-arg name="navigationModel" ref="navmodel" />
+		<beans:constructor-arg name="viewModelRepository" ref="viewmodel" />
+		<beans:constructor-arg name="metaDirectory" value="${paths.metaDirectory}" />
+		<beans:constructor-arg name="navigationDirectory" value="${paths.navigationDirectory}" />
+		<beans:constructor-arg name="viewDirectory" value="${paths.viewDirectory}" />
+		<beans:constructor-arg name="validatorsDirectory" value="${paths.validatorsDirectory}" />
+	</beans:bean>
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<beans:property name="maxUploadSize" value="10000000"/>
+	</beans:bean>	
+		
+	<beans:bean id="navigation" class="ion.web.app.util.NavigationProvider">
+		<beans:property name="navigationModel" ref="navmodel" />
+	</beans:bean>
+
+	<beans:bean id="fileStorage" class="ion.web.app.storage.AppFileStorage">
+	</beans:bean>
+
+	<beans:bean id="externals" class="ion.web.app.util.WebAppExternals">
+		<beans:property name="enabled" value="false" />
+	</beans:bean>
+	
+	<beans:bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+	    <beans:property name="propertyEditorRegistrars">
+	        <beans:list>
+	            <beans:bean class="ion.web.app.util.DateParser"/>
+	        </beans:list>
+	    </beans:property>
+	</beans:bean>
+	
+	<beans:bean id="sessionVarsController" class="ion.web.app.SessionVarsController">
+		<!-- <beans:property name="dateFormat" value="unix" />  -->
+		<beans:property name="dateFormat" value="yyyy-MM-dd" />
+		<beans:property name="varDefinitions">
+			<beans:map>
+				<beans:entry key="currentSection" value="java.lang.String" />
+				<!-- 
+				<beans:entry key="period" value="[Ljava.util.Date;" />
+				-->
+			</beans:map>
+		</beans:property>
+	</beans:bean>
+	
+	<beans:bean id="sessionContext" class="ion.web.app.ContextHolder">
+		<beans:property name="defaults">
+			<beans:map>
+				<beans:entry key="currentSection" value="" />
+				<!-- 
+				<beans:entry key="period">
+					<beans:list value-type="java.util.Date">
+						<beans:value>2014-12-01</beans:value>
+						<beans:value>2014-12-02</beans:value>
+					</beans:list>
+				</beans:entry>
+				-->
+			</beans:map>
+		</beans:property>
+	</beans:bean>
+	
+	<!-- 	 -->
+	<beans:bean id="acl" class="ion.framework.acl.DbAcl">
+		<beans:property name="logger" ref="logger" />
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+	
+	<beans:bean id="aclManager" class="ion.web.app.util.AclManager">
+		<beans:property name="acl" ref="acl" />
+		<beans:property name="authContext" ref="authContext"/>
+	</beans:bean>
+
+	
+	<context:component-scan base-package="ion.web.app.service" />	
+	<context:component-scan base-package="ion.web.app.controllers" />
+	<context:component-scan base-package="ion.web.app.controllers.ajax" />
+	<context:component-scan base-package="ion.web.app.digisign" />	
+	
+	<!--  
+	<beans:bean id="digiSignDataProvider" class="ion.web.app.digisign.JsonDigiSignDataProvider">
+	</beans:bean>
+
+	<beans:bean id="signedDataHandler" class="ion.web.app.digisign.SignedDataHandler">
+		<beans:property name="digitalSignatureDAO" ref="digiSignDAO" />
+	</beans:bean>
+	
+	<beans:bean id="digiSignDAO" class="ion.framework.digisign.DigitalSignatureDAO">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+	-->	
+</beans:beans>

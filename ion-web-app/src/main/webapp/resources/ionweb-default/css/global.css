@@ -1,0 +1,812 @@
+@CHARSET "UTF-8";
+/*-------------------------------------------------------------------*/
+/*	Глобальные стили	---------------------------------------------*/
+body {
+	margin:0px;
+	font-family:Calibri, Verdana, Arial, sans-serif;
+	font-size:11pt;
+    line-height:1.3em;
+    background-color: #ffffff;
+    background-image: url('../img/Curve.png');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+input {
+	font-family:inherit;
+	font-size:0.9em;
+    line-height:1.3em;
+}
+textarea {	
+	font-family: inherit;
+	font-size: 0.9em;
+	display: block;
+	width: 90%;
+	height: 5em;
+	margin: 0.25em auto;
+	resize: none;
+}
+button {
+	font-family:inherit;
+	font-size:1em;
+}
+.clearfix {
+	clear: both;
+}
+/*	Попапные текстовые узлы	*/
+.overflowed-text {
+	vertical-align: middle;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: pre;	
+	cursor: default;
+}
+.overflowed-text-modal {	
+	font-size: 11pt;
+	line-height: 1.3em;
+	position: fixed;
+	background: white;
+	color: black;
+	border: 1px solid black;
+	padding: 0.1em 0.2em;
+	width: auto;
+	max-width: none;
+	z-index:99;	
+}
+/*	Стили и анимация кнопок-иконок	*/
+button.icon-button {	
+	vertical-align: middle;
+	width: 2em;
+	height: 2em;
+	margin: 0.25em;
+	border: none;
+	background-color: transparent;
+	-o-background-size: 90%; /* opera ≥ 9.5 */
+    -webkit-background-size: 90%; /* Safari ≥ 5.0, Chrome ≥ 4.0 */
+    -khtml-background-size: 90%; /* Konqueror ≥ 3.5.4 */
+    -moz-background-size: 90%; /* Firefox ≥ 3.6 */
+    background-size: 90%; /* браузеры с поддержкой CSS3: FF ≥ 4, Opera ≥ 10.53, IE ≥ 9.0 */
+	background-position: center center;
+	background-repeat: no-repeat;
+	outline:none;
+}
+button.icon-button:hover {	
+	margin: 0;
+	width: 2.5em;
+	height: 2.5em;
+}
+button.icon-button:active {
+	margin: 0.25em;
+	width: 2em;
+	height: 2em;
+}
+/*-------------------------------------------------------------------*/
+/*	Шапка сайта	-----------------------------------------------------*/
+/*	Сетка	*/
+#header {
+	font-size:1.2em;
+	color: #ffffff;
+	background: #548dd4;
+	box-shadow: 0 0 10px #555555;
+	padding: 0;
+	z-index:50;
+}
+#header .ribbon {
+	margin: 0.25em 0.5em;
+}
+#header .ribbon .logo-block {
+	float: left;
+	max-width: 20%;
+	min-width: 7em;
+	position: relative;
+	padding: 0.6em 0 0.6em 2.5em;
+	height:2.5em;
+}
+#header .ribbon .actions-block {
+	float: right;
+}
+#header .ribbon .search-block {
+	float: right;
+}
+#header .logo-block button.logo-button {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#header .logo-block span.overflowed-text {
+	display:inline-block;
+}
+
+#header .app-menu {
+	list-style: none;
+	margin: 0;
+	padding-left: 1em;
+	color: #548dd4;
+	line-height: 1.5em;	
+	text-align: left;
+	text-decoration:none;
+	background-color: #ffffff;
+	border: 2px solid #548dd4;
+	border-top: none;
+	padding: 0.5em;	
+	display: none;
+	cursor: pointer;
+	position:absolute;	
+	z-index:100;
+	box-sizing:border-box;
+}
+
+#header .app-menu a {	
+	color: #548dd4;
+	text-decoration:none;
+	display: block;
+	cursor: pointer;
+	white-space: nowrap; 
+}
+#header .app-menu a:hover {	
+	background-color: #548dd4;
+	color: #ffffff;
+}
+
+/*	Главное меню	*/
+#header .menu-block>ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;	
+}
+#header .menu-block>ul>li {
+	zoom:1;
+	display: inline-block;
+	*display:inline;
+	vertical-align: top;
+	height: 2.5em;
+	line-height: 2.5em;	
+	min-width: 5em;
+	margin: 0 0.5em;
+	overflow: hidden;
+	cursor: pointer;
+}
+#header .menu-block>ul>li .overflowed-text {	
+	max-width: 100%;
+}
+#header .menu-block>ul>li>*:first-child {
+	color: #ffffff;
+	text-decoration: none;
+	display: block;
+	cursor: pointer;	
+	border: 2px solid #548dd4;
+	border-bottom: none;
+	border-top: none;
+	padding: 0 0.5em;	
+}
+#header .menu-block>ul>li:not(.locked):hover, #header .menu-block>ul>li.opened {
+	overflow: visible;	
+	position: relative;
+	z-index: 10;
+}
+.less-ie9 #header .menu-block>ul>li.opened {
+	overflow: visible;	
+	position: relative;
+}
+#header .menu-block>ul>li:hover>*:first-child, #header .menu-block>ul>li.opened>*:first-child {
+	color: #548dd4;
+	background-color: #ffffff;
+}
+#header .menu-block>ul>li:active>*:first-child {
+	color: #144d94;
+}
+#header .menu-block>ul>li ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 1em;
+	color: #548dd4;
+	line-height: 1.5em;	
+	text-align: left;
+}
+#header .menu-block>ul>li>ul {	
+	background-color: #ffffff;
+	border: 2px solid #548dd4;
+	border-top: none;
+	padding: 0.5em;
+}
+#header .menu-block>ul>li>ul a {	
+	color: #548dd4;
+	text-decoration:none;
+	display: block;
+	cursor: pointer;
+}
+#header .menu-block>ul>li>ul a:hover {	
+	background-color: #548dd4;
+	color: #ffffff;
+}
+#header .menu-block>ul>li>ul a:active {
+	background-color: #548dd4;
+	color: #144d94;
+}
+/*	Форма поиска	*/
+#header .search-block form {
+	margin: 0;
+}
+#header .search-block form input {
+	border:1px solid #000000;
+	font-size: 0.9em;
+	width: 8.5em;
+}
+/*	Хлебные крошки	*/
+#header .breadcrumbs {	
+	font-size: 0.85em;
+	font-weight: bold;
+	padding: 0.25em 0.6em;
+	margin: 0.25em 0;
+	background-color: #ffffff;
+	background-image: 
+		-webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(84, 141, 212, 0.35)),
+		url('../img/Curve.png');
+	background-image: 
+		-moz-linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(84, 141, 212, 0.35)), 
+		url('../img/Curve.png');
+	background-image: 
+		-ms-linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(84, 141, 212, 0.35)), 
+		url('../img/Curve.png');
+	background-image: 
+		-o-linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(84, 141, 212, 0.35)), 
+		url('../img/Curve.png');
+	background-image: 
+		linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(84, 141, 212, 0.35)), 
+		url('../img/Curve.png');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+#header .breadcrumbs a {
+	color: #548dd4;
+	text-decoration:none;
+}
+#header .breadcrumbs a:hover {
+	text-decoration:underline;
+}
+#header .breadcrumbs a:active {
+	color: #144d94;
+}
+#header .breadcrumbs img.arrow {
+	height: 0.75em;
+	width: 0.75em;
+	vertical-align: middle;
+	margin: 0.25em;
+}
+#header .breadcrumbs img.arrow:first-child {
+	display:none;
+}
+/*	Иконки кнопок шапки	*/
+#header button.logo-button {
+	background-image: url('../img/Menu_ion_w_64.png');
+}
+#header button.search-button {
+	background-image:url('../img/Find_w_64.png');
+}
+#header button.help-button {
+	background-image:url('../img/Help_w_64.png');
+}
+#header button.options-button {
+	background-image:url('../img/Tools_w_64.png');
+}
+/* IE 8 */
+.ie8 #header button.logo-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Menu_ion_w_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 #header button.search-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Find_w_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 #header button.help-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Help_w_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 #header button.options-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Tools_w_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+/* IE < 8 */
+.less-ie8 #header button.logo-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Menu_ion_w_64.png', sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 #header button.search-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Find_w_64.png', sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 #header button.help-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Help_w_64.png', sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 #header button.options-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Tools_w_64.png', sizingMethod=scale);
+	background-image: none;
+}
+/*-------------------------------------------------------------------*/
+/*	Тело сайта	-----------------------------------------------------*/
+/*	Панели инструментов	*/
+.toolbar {	
+	border: 2px solid #548dd4;
+	box-shadow: 0 0 10px #555555;
+	outline: 1px solid #000000;
+	outline-offset: -0.3em;
+	margin: 0.5em;
+	zoom: 1;
+	display: inline-block;
+	*display: inline;
+	background-color: white;
+}
+.toolbar.vertical {
+	width:2.5em;	
+}
+.toolbar button.icon-button.inactive:hover {	
+	width: 2em;
+	height: 2em;
+	margin: 0.25em;
+}
+/* Иконки кнопок панелей инструментов	*/
+.toolbar button.add-button {
+	background-image:url('../img/Create_64.png');
+}
+.toolbar button.edit-button {
+	background-image:url('../img/Edit_64.png');
+}
+.toolbar button.delete-button {
+	background-image:url('../img/Delete_64.png');
+}
+.toolbar button.copy-button {
+	background-image:url('../img/Copy_64.png');
+}
+.toolbar button.save-button {
+	background-image:url('../img/Save_64.png');
+}
+.toolbar button.print-button {
+	background-image:url('../img/Print_64.png');
+}
+.toolbar button.lock-button {
+	background-image:url('../img/Lock_64.png');
+}
+.toolbar button.renew-button {
+	background-image:url('../img/Renew_64.png');
+}
+.toolbar button.expand-left-button {
+	background-image:url('../img/Expand_left_64.png');
+}
+.toolbar button.expand-top-button {
+	background-image:url('../img/Expand_top_64.png');
+}
+/* IE 8 */
+.ie8 .toolbar button.add-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Create_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.edit-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Edit_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.delete-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Delete_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.copy-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Copy_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.save-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Save_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.print-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Print_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.lock-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Lock_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.renew-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Renew_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.expand-left-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand_left_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.expand-top-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand_top_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+/* IE < 8 */
+.less-ie8 .toolbar button.add-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Create_64.png', sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.edit-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Edit_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.delete-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Delete_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.copy-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Copy_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.save-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Save_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.print-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Print_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.lock-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Lock_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.renew-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Renew_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.expand-left-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand_left_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.expand-top-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand_top_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.toolbar button.add-button.inactive {
+	background-image:url('../img/Create_64_inactive.png');
+}
+.toolbar button.edit-button.inactive {
+	background-image:url('../img/Edit_64_inactive.png');
+}
+.toolbar button.delete-button.inactive {
+	background-image:url('../img/Delete_64_inactive.png');
+}
+.toolbar button.copy-button.inactive {
+	background-image:url('../img/Copy_64_inactive.png');
+}
+.toolbar button.save-button.inactive {
+	background-image:url('../img/Save_64_inactive.png');
+}
+.toolbar button.print-button.inactive {
+	background-image:url('../img/Print_64_inactive.png');
+}
+.toolbar button.lock-button.inactive {
+	background-image:url('../img/Lock_64_inactive.png');
+}
+.toolbar button.renew-button.inactive {
+	background-image:url('../img/Renew_64_inactive.png');
+}
+.toolbar button.expand-left-button {
+	background-image:url('../img/Expand_left_64.png');
+}
+.toolbar button.expand-top-button {
+	background-image:url('../img/Expand_top_64.png');
+}
+/* IE 8 */
+.ie8 .toolbar button.add-button.inactive {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Create_64_inactive.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.edit-button.inactive {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Edit_64_inactive.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.delete-button.inactive {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Delete_64_inactive.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.copy-button.inactive {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Copy_64_inactive.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.save-button.inactive {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Save_64_inactive.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.print-button.inactive {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Print_64_inactive.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.lock-button.inactive {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Lock_64_inactive.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.renew-button.inactive {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Renew_64_inactive.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.expand-left-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand_left_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .toolbar button.expand-top-button {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand_top_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+/* IE < 8 */
+.less-ie8 .toolbar button.add-button.inactive {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Create_64_inactive.png', sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.edit-button.inactive {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Edit_64_inactive.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.delete-button.inactive {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Delete_64_inactive.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.copy-button.inactive {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Copy_64_inactive.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.save-button.inactive {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Save_64_inactive.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.print-button.inactive {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Print_64_inactive.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.lock-button.inactive {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Lock_64_inactive.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.renew-button.inactive {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Renew_64_inactive.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.expand-left-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand_left_64.png',sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .toolbar button.expand-top-button {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand_top_64.png',sizingMethod=scale);
+	background-image: none;
+}
+/*	Блок деталей	*/
+#details {
+	padding: 0.5em;
+	margin: 0 0 0 0.5em;
+	border-left:1px solid #dcdcde;
+	border-top:1px solid #dcdcde;
+	width: 100%;
+	overflow: auto;
+	background-color: rgba(220, 220, 222, 0.3);
+	display: none;
+}
+/*	блок контента	*/
+#content {
+	width: 100%;
+	height:100%;
+	overflow: auto;
+}
+/*-------------------------------------------------------------------*/
+/*	Постраничная навигация	-----------------------------------------*/
+.pagenav {
+	margin: 0.5em 0;
+	font-size: 1.2em;
+}
+.pagenav a {
+	text-decoration:none;
+	color: #548dd4;
+	zoom: 1;
+	display: inline-block;
+	*display:inline;
+	padding: 0.15em;
+	width: 1.1em;	
+	border-radius: 1em;	
+	text-align: center;
+}
+.pagenav a:hover {
+	background: #548dd4;
+	color: white;
+	font-weight: bold;
+}
+.pagenav a.current {
+	font-weight: bold;
+	padding: 0;
+	border: 0.15em solid #548dd4;
+}
+.pagenav a.current:hover {
+	background: none;
+	color: #548dd4;
+}
+/*-------------------------------------------------------------------*/
+/*	Список	---------------------------------------------------------*/
+div.list table {
+	border-spacing:0.25em 0;
+	min-width: 50%;
+}
+div.list table tr+tr:hover  {
+	background: #94cde4;
+}
+div.list table tr.active  {
+	background: #548dd4;
+}
+div.list table tr.active:hover  {
+	background: #74ade4;
+}
+div.list table td, div.list table th {
+	border:1px solid #548dd4;
+	padding: 0.25em;
+}
+div.list table th.overflowed-text {
+	max-width: 3em;
+}
+div.list table td {
+	border-top: none;
+}
+/*-------------------------------------------------------------------*/
+/*	Блок сообщения об ошибке	-------------------------------------*/
+.error-message-block {
+	background: #FF0033;
+	border: 1px solid #000000;
+	padding: 0.5em;
+	margin: 0.5em;
+}
+/*-------------------------------------------------------------------*/
+/*	Укороченное представление	-------------------------------------*/
+.short-view .short-view-header {	
+	border-left-style: solid;
+	border-left-width:0.3em;
+	border-left-color:#548dd4;
+	margin: 0.25em 0;
+	height: 2.5em;
+}
+.short-view .short-view-header h5 {
+	display: inline;
+	cursor: pointer;		
+	font-size: 1em;	
+	margin:0;
+}
+.short-view .short-view-header h5:hover {
+	color: #548dd4;
+}
+.short-view .short-view-header h5.overflowed-text {
+	max-width:7em;
+	zoom: 1;
+	display: inline-block;
+	*display: inline;
+	white-space: nowrap;
+}
+.short-view .short-view-header button.toggle {
+	background-image: url('../img/Expand2_top_64.png');
+}
+.short-view .short-view-header button.toggle.collapsed {
+	background-image: url('../img/Expand2_bottom_64.png');
+}
+/* IE 8 */
+.ie8 .short-view .short-view-header button.toggle {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand2_top_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+.ie8 .short-view .short-view-header button.toggle.collapsed {
+	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://localhost:8080/ion-web-app/theme/img/Expand2_bottom_64.png',sizingMethod=scale)";
+	background-image: none;
+}
+/* IE < 8 */
+.less-ie8 .short-view .short-view-header button.toggle {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Expand2_top_64.png', sizingMethod=scale);
+	background-image: none;
+}
+.less-ie8 .short-view .short-view-header button.toggle.collapsed {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='http://localhost:8080/ion-web-app/theme/img/Expand2_bottom_64.png', sizingMethod=scale);
+	background-image: none;
+}
+/*-------------------------------------------------------------------*/
+/*	Поля	---------------------------------------------------------*/
+.to-right {
+	display:block;
+	text-align:right;
+}
+.image {
+	width: 7em;
+	height: 7em;
+	line-height: 7em;
+	text-align: center;
+}
+.image img {
+	max-width: 7em;
+	max-height: 7em;
+	vertical-align: middle;
+}
+.fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #dcdcde;
+	margin-bottom: 1em;
+}
+.fieldset .legend {
+	background-image: url('../img/Line.png');
+	background-position: center right;
+	background-repeat: repeat-x;
+	font-weight:bold;
+}
+.fieldset .legend span {
+	background-image: url('../img/LineBreaker.png');
+	background-position: center right;
+	background-repeat: no-repeat;
+	background-color: #ffffff;
+	padding-right: 25px;
+}
+.fieldset .legend span.overflowed-text {
+	max-width: 10em;
+	zoom: 1;
+	display: inline-block;
+	*display: inline;
+	white-space: nowrap;
+}
+.field {
+	margin: 0.25em 0;
+}
+.field label {
+	color: gray;
+}
+.field label+b {
+	color: gray;
+	padding-right: 0.5em;
+	vertical-align: middle;
+}
+.field label.overflowed-text {
+	max-width: 50%;
+	zoom: 1;
+	display: inline-block;
+	*display: inline;
+	white-space: nowrap;
+}
+.field input, .field select, .field textarea {
+	border-style:solid;
+	border-width:1px;
+	border-color:#dedefe;
+	padding: 0.25em;
+}
+input.tiny, select.tiny {
+	width:50px;	
+}
+textarea.tiny {
+	height:50px;	
+}
+input.short, select.short {
+	width:100px;
+}
+textarea.short {
+	height:100px;
+}
+input.medium, select.medium {
+	width:150px;
+}
+textarea.medium {
+	height:150px;
+}
+input.long, select.long {
+	width:200px;
+}
+textarea.long {
+	height:200px;
+}
+input.big, select.big {
+	width:300px;
+}
+textarea.big {
+	height:300px;
+}
+button.ref-link {	
+	background-image:url(../img/Edit_64.png);
+}
+button.collection-link {
+	background-image:url(../img/Edit_64.png);
+}

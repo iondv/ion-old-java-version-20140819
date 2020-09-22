@@ -1,0 +1,12 @@
+{
+  "code": "federal.shortULRequest",
+  "type": 1,
+  "caption": "Запрос кратких сведений из ЕГРЮЛ",
+  "classname": "shortULRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

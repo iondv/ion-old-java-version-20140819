@@ -1,0 +1,12 @@
+{
+  "code": "federal.FSIN01001.IQueryPenitentiary",
+  "type": 1,
+  "caption": "(ФСИН) Запрос сведений о нахождении гражданина в местах лишения свободы",
+  "classname": "IQueryPenitentiary",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

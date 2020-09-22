@@ -1,0 +1,12 @@
+{
+  "code": "federal.smvFSFRLicIP",
+  "type": 1,
+  "caption": "(ФСФР) Запрос сведений о лицензии (ИП)",
+  "classname": "smvFSFRLicIP",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

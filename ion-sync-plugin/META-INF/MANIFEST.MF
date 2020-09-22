@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ion-sync
+Bundle-SymbolicName: ion-sync
+Bundle-Version: 1.2.1.a
+Bundle-ClassPath: .
+Export-Package: ion.util.sync
+Require-Bundle: ion-modeling,
+ liquibase.core,
+ ion-core,
+ com.google.gson,
+ org.apache.commons.lang;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

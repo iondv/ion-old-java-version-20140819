@@ -1,0 +1,12 @@
+{
+  "code": "federal.unifoImpCharge",
+  "type": 1,
+  "caption": "(ФК) Запрос на импорт начисления",
+  "classname": "unifoImpCharge",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

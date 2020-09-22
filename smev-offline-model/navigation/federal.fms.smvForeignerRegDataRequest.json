@@ -1,0 +1,12 @@
+{
+  "code": "federal.fms.smvForeignerRegDataRequest",
+  "type": 1,
+  "caption": "(ФМС) Запрос сведений о регистрации иностранного гражданина по месту жительства",
+  "classname": "smvForeignerRegDataRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

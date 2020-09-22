@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ion-core
+Bundle-SymbolicName: ion-core
+Bundle-Version: 1.1.9.a
+Bundle-ClassPath: .
+Export-Package: ion.core,
+ ion.core.auth,
+ ion.core.data,
+ ion.core.meta,
+ ion.core.storage
+Require-Bundle: org.apache.commons.lang;bundle-version="2.6.0",
+ org.slf4j.api;bundle-version="1.7.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

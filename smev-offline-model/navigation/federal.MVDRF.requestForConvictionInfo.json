@@ -1,0 +1,12 @@
+{
+  "code": "federal.MVDRF.requestForConvictionInfo",
+  "type": 1,
+  "caption": "(МВД) Запрос на предоставление сведений о непогашенной или неснятой судимости",
+  "classname": "requestForConvictionInfo",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

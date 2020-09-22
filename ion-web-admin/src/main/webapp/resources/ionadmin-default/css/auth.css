@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+.login-pane {
+	position:fixed;
+	width:90mm;
+	height:56mm;
+	background-color:white;
+	border-style:solid;
+	border-width:1px;
+	border-color:silver;
+	padding:2mm;
+	border-radius:2mm;
+	left:50%;
+	top:50%;
+	margin-top:-30mm;
+	margin-left:-47mm;
+	box-shadow: 4mm 4mm 2mm gray;
+}
+
+.login-pane table {
+	border-style:none;
+}
+
+.login-pane table td {
+	vertical-align: middle;
+	padding:2mm;
+	border-style:none;
+}
+
+.login-pane .remember-me {
+	font-size:1em;
+	margin-right:5mm;
+	vertical-align: top;
+	line-height: 10mm;
+}
+
+.login-pane .button-holder {
+	text-align:right;
+}

@@ -1,0 +1,12 @@
+{
+  "code": "federal.smvFSFRLicUL",
+  "type": 1,
+  "caption": "(ФСФР) Запрос сведений о лицензии (ЮЛ)",
+  "classname": "smvFSFRLicUL",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

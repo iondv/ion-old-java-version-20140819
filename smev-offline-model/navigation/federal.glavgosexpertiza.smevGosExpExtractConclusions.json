@@ -1,0 +1,12 @@
+{
+  "code": "federal.glavgosexpertiza.smevGosExpExtractConclusions",
+  "type": 1,
+  "caption": "(Главгосэкспертиза) Запрос выписок из реестра выданных заключений государственной экспертизы проектной документации и проверки достоверности определения сметной стоимости",
+  "classname": "smevGosExpExtractConclusions",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

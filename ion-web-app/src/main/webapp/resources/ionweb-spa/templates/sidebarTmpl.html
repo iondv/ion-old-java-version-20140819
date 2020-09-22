@@ -1,0 +1,25 @@
+<nav id="sidebar" class="sidebar" ng-multi-transclude-controller ng-class="{collapsed:sidebarCollapsed === 'true',float:sidebarFloat === 'true'}">          
+  <!-- sidebar header -->  
+  <header class="sidebar-header">
+    <a class="sidebar-toggle" ng-click="changeCollapsed()"><span class="icon"></span></a>
+    <a class="sidebar-mode" title="Переключить режим отображения боковой панели" ng-click="changeFloat()"><span class="icon icon-small iconfont-pin"></span></a>
+  </header>    
+  <!-- sidebar content -->
+  <div class="sidebar-content">
+    <!-- sidebar collapsed content -->
+    <section class="sidebar-collapsed-content">
+    <ul class="icon-btn-list">      
+      <div ng-multi-transclude="sidebar-collapsed"></div>           
+    </ul>
+    </section>
+
+    <!-- sidebar expanded content -->
+    <section class="sidebar-expanded-content">
+      <div ng-multi-transclude="sidebar-expanded"></div>
+    </section>           
+  </div>                   
+  <!-- sidebar footer -->
+  <footer class="sidebar-footer">
+    <a class="sidebar-toggle" ng-click="changeCollapsed()"><span class="icon"></span></a>
+  </footer>   
+</nav>  

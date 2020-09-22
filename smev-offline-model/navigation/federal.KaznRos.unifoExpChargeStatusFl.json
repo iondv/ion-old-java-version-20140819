@@ -1,0 +1,12 @@
+{
+  "code": "federal.KaznRos.unifoExpChargeStatusFl",
+  "type": 1,
+  "caption": "(ФК) Запрос на экспорт начислений и статусов их квитирования для ФЛ",
+  "classname": "unifoExpChargeStatusFl",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

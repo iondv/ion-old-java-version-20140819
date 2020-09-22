@@ -1,0 +1,12 @@
+{
+  "code": "federal.RosZdravNadzor.ZdravSX",
+  "type": 1,
+  "caption": "(Росздравнадзор) Запрос сведений из реестра лицензии",
+  "classname": "ZdravSX",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: V3
+Bundle-SymbolicName: liquibase.eclipse.v3;singleton:=true
+Bundle-Version: 1.0.4.qualifier
+Bundle-ClassPath: .
+Export-Package: com.svcdelivery.liquibase.eclipse.v3;version="1.0.0.qualifier"
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.9.100",
+ liquibase.eclipse.api,
+ liquibase.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Service-Component: OSGI-INF/liquibasev3.xml,OSGI-INF/liquibaseProviderV3.xml
+Bundle-ActivationPolicy: lazy

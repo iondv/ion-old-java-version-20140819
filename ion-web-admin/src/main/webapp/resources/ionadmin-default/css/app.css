@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+
+#header {
+	background-color:#6060a0;
+	font-size:1.5em;
+	color:white;
+	padding:2mm;
+	height:8mm;
+}
+
+#header>#start {
+	text-align:left;
+	width:60mm;
+	position:relative;
+	z-index:15;
+	white-space: nowrap;
+}
+
+#header>#start>span {
+	line-height:7mm;
+	vertical-align: top;
+	height:7mm;
+}
+
+#header>#start>button {
+	background-color:transparent;
+	border-style:solid;
+	border-width:1mm;
+	border-color:white;
+	width:7mm;
+	min-width:7mm;
+	height:7mm;
+	cursor:pointer;
+}
+
+#greeting {
+	text-align:right;
+	padding-right:4mm;
+	position:relative;
+	top:-12mm;
+}
+
+#header>#menu {
+	text-align:center;
+	position:relative;
+	top:-7mm;
+	z-index:10;
+}
+
+#header>#menu a {
+	color:white;
+	text-decoration: none;
+}
+
+#header>#menu a:hover {
+	color:white;
+	text-decoration:underline;
+}
+
+#header>#menu a:visited {
+	color:white;
+}
+
+#header>#menu>.node.top {
+	display:inline-block;
+	margin-right:5mm;
+	margin-left:5mm;
+	cursor:pointer;
+}
+
+#header>#menu .sub-nodes.vertical {
+	display:none;
+	position:absolute;
+	text-align:left;
+	background-color:#6060a0;
+	border-style:solid;
+	border-color:#303070;
+	padding:2mm;
+	border-radius:2mm;
+	box-shadow: 2mm 2mm 2mm gray;
+	z-index:30;
+}
+
+#header>#menu .sub-nodes.vertical>.node {
+	margin:2mm;
+}

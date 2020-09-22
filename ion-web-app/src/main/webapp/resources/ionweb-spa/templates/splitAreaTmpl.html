@@ -1,0 +1,17 @@
+<div class="maincol" ng-multi-transclude-controller>
+	<div class="split-area">
+		<div class="split-row">
+			<div class="split-cell split-master">
+				<div class="split-content" id="master-area">
+					<div ng-multi-transclude="master-block"></div>		      		
+				</div>  
+			</div>            
+			<div class="split-cell split-slave" ng-show="showSlave">
+				<div class="split-control"></div>
+				<div class="split-content" id="slave-area">
+					<div ng-multi-transclude="slave-block"></div>
+				</div>  
+			</div>
+		</div>
+	</div>    
+</div>

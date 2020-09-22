@@ -1,0 +1,12 @@
+{
+  "code": "petition.smvMunPrivatSpravkaYLServ",
+  "type": 1,
+  "caption": "Заявление на выдачу справки об использовании (неиспользовании) права приватизации (ЮЛ)",
+  "classname": "smvMunPrivatSpravkaYLServ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

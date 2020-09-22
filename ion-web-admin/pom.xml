@@ -1,0 +1,245 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ion.web.admin</groupId>
+  <artifactId>ion-user-admin</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ion-admin</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<java-version>1.7</java-version>  
+  	<ionadmin.org.springframework-version>4.1.1.RELEASE</ionadmin.org.springframework-version>
+	<ionadmin.org.springsecurity-version>3.2.4.RELEASE</ionadmin.org.springsecurity-version>
+	<ionadmin.org.aspectj-version>1.6.10</ionadmin.org.aspectj-version>
+	<ionadmin.org.slf4j-version>1.6.6</ionadmin.org.slf4j-version>
+	<ionadmin.org.hibernate.version>4.3.9.Final</ionadmin.org.hibernate.version>
+  </properties>
+  
+	<profiles>
+		<profile>
+			<id>war</id>
+			<properties>
+				<pom.db.driver>enter driver class here</pom.db.driver>
+				<pom.db.url>enter database url here</pom.db.url>
+				<pom.db.user>enter database user here</pom.db.user>
+				<pom.db.password>enter database password here</pom.db.password>
+				<pom.db.dialect>enter hibernate dialect here</pom.db.dialect>
+				<pom.filter></pom.filter>
+			</properties>
+		</profile>
+		<profile>
+			<id>develop</id>
+			<properties>
+				<pom.filter>dev.properties</pom.filter>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>  
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- Spring -->
+	    <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${ionadmin.org.springframework-version}</version>
+		</dependency>
+    
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${ionadmin.org.springframework-version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${ionadmin.org.springframework-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${ionadmin.org.springsecurity-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${ionadmin.org.springsecurity-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${ionadmin.org.springsecurity-version}</version>
+			<scope>runtime</scope>
+		</dependency>	
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${ionadmin.org.springframework-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${ionadmin.org.springframework-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		    <version>${ionadmin.org.springframework-version}</version>
+		</dependency>
+		
+		<!-- Hibernate -->
+		 <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${ionadmin.org.hibernate.version}</version>
+        </dependency>
+        
+        <!-- ion -->
+		 <dependency>
+            <groupId>ion.framework.core</groupId>
+            <artifactId>ion-auth</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
+		 <dependency>
+            <groupId>ion.framework.web</groupId>
+            <artifactId>ion-web-util</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>        
+
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+        <!-- Hibernate uses slf4j for logging, for our purposes here use the simple backend -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+		
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${ionadmin.org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${ionadmin.org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${ionadmin.org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>
+		</dependency>
+    </dependencies>
+  <build>
+    <finalName>ion-admin</finalName>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>2.5.1</version>
+			<configuration>
+				<source>1.7</source>
+				<target>1.7</target>
+				<compilerArgument>-Xlint:all</compilerArgument>
+				<showWarnings>true</showWarnings>
+				<showDeprecation>true</showDeprecation>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>2.2</version>
+			<configuration>
+				<filters>
+					<filter>${pom.filter}</filter>
+				</filters>
+				<webResources>
+					<resource>
+						<filtering>true</filtering>
+						<directory>src/main/webapp/WEB-INF</directory>
+						<targetPath>WEB-INF</targetPath>
+						<includes>
+							<include>*.properties</include>
+						</includes>
+					</resource>
+				</webResources>
+			</configuration>
+		</plugin>
+	</plugins>    
+  </build>
+</project>

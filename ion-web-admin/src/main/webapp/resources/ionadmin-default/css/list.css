@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+.list-item {
+	
+}
+
+.list-item.active {
+	background-color:#cfcfef;
+}
+
+.row-details {
+	display:none;
+}
+
+.row-details.active {
+	display:block;
+}
+
+.details-column {
+	width:120mm;
+}
+
+.row-details {
+	background-color:white;
+	border-style:solid;
+	border-color:silver;
+	padding:2mm;
+}
+
+.row-details div {
+	margin-top:1mm;
+	margin-bottom:1mm;
+	font-weight:1.1em;
+}
+
+.row-details div .label {
+	color:gray;
+	font-weight:bold;
+	margin-right:3mm;
+	font-size:1em;
+}

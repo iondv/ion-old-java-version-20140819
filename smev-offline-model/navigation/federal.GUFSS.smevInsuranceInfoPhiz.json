@@ -1,0 +1,12 @@
+{
+  "code": "federal.GUFSS.smevInsuranceInfoPhiz",
+  "type": 1,
+  "caption": "(ФСС) Запрос сведений о состоянии расчетов по страховым взносам, пеням и штрафам плательщика страховых взносов - ФЛ",
+  "classname": "smevInsuranceInfoPhiz",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

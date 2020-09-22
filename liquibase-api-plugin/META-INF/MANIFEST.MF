@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Liquibase eclipse plugin api
+Bundle-SymbolicName: liquibase.eclipse.api
+Bundle-Version: 1.0.3.qualifier
+Bundle-ClassPath: .
+Export-Package: com.svcdelivery.liquibase.eclipse.api
+Import-Package: org.osgi.framework;version="1.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

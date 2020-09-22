@@ -1,0 +1,12 @@
+{
+  "code": "petitions",
+  "type": 1,
+  "caption": "Услуги",
+  "classname": "Petition",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

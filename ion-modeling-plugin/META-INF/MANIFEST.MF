@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ion-modeling
+Bundle-SymbolicName: ion-modeling
+Bundle-Version: 1.2.6.a
+Bundle-ClassPath: .
+Export-Package: ion.framework.meta.plain,
+ ion.framework.workflow.plain,
+ ion.framework.validators,
+ ion.viewmodel.navigation,
+ ion.viewmodel.plain,
+ ion.viewmodel.view
+Require-Bundle: ion-core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

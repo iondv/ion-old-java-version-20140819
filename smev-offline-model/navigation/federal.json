@@ -1,0 +1,12 @@
+{
+  "code": "federal",
+  "type": 0,
+  "caption": "Федеральные сервисы",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

@@ -1,0 +1,12 @@
+{
+  "code": "federal.Nalog.smvFNSLicSXRequest",
+  "type": 1,
+  "caption": "(ФНС) Запрос о предоставлении лицензии, переоформлении документа, подтверждающего наличие лицензии, приостановлении, возобновлении или прекращении действия лицензии, аннулировании лицензии",
+  "classname": "smvFNSLicSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

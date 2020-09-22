@@ -1,0 +1,60 @@
+<input type="hidden" ng-required="isRequired(field)" ng-model="list" />
+<div class="col-create-dialog" style="display:none;" >
+	<p><select class="ionSelect" name="__cc" ng-model="modalDialog.id" 
+	style="width:350px;" 
+	ng-options="class.name as class.caption for class in creationClasses"></select></p>
+	<p><button class="btn half show" ng-click="modalClick()">Добавить</button></p>
+</div>
+<!-- 
+<div class="col-del-dialog" style="display:none;">
+	<p>Вы хотите полностью удалить объект или только убрать его из этого списка?</p>
+	<p>
+		<button class="btn half show" ng-click="del()">Удалить полностью</button>
+		<button class="btn half show" ng-click="rem()">Убрать из списка</button>
+	</p>
+</div>
+-->
+<div class="toolbar" ng-hide="field.readonly">
+	<!-- 
+   <button class="add-trigger btn" title="Создать" ng-click="addColEl()"><span class="icon icon-small iconfont-add"></span></button>
+   <button class="btn" title="Добавить" ng-click="selectColItem()">...</button>
+   <button class="delete-trigger btn" title="Удалить" ng-click="startDel()"><span class="icon icon-small iconfont-delete"></span></button>
+    -->
+   <button class="btn" ng-repeat="action in field.actions track by $index" ng-click="execColAction(action)" title="{{action.caption}}">
+   	<span class="icon icon-small iconfont-{{action.id}}"></span>
+   </button>
+   <!-- 
+   <span ng-show="showNewItem"> | 
+	   <button class="add-trigger btn" title="Сохранить" ng-click="saveColEl()"><span class="icon icon-small iconfont-success"></span></button>
+	   <button class="add-trigger btn" title="Отмена" ng-click="showNewItem=false"><span class="icon icon-small iconfont-close-dialog"></span></button>
+   </span>
+   -->
+</div>
+<table class="col-field table zebra">
+	<thead>
+		<tr>
+			<th ng-hide="field.readonly">
+				<input type="checkbox" class="select-all row-selector"/>
+			</th>
+			<th title="{{col.caption}}" ng-repeat="col in field.columns">
+				<span>{{col.caption}}</span>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-show="showNewItem">
+			<td ng-hide="field.readonly"></td>
+			<td ng-repeat="col in field.columns">
+				<div ion-col-field ion-item="newItem"></div>
+			</td>
+		</tr>
+		<tr ng-repeat="item in item[field.property] track by $index" ng-click="chooseItem($index,$event)" ng-class="{focused:item === chosenItem}">
+			<td ng-hide="field.readonly">
+				<input type="checkbox" class="row-selector" ng-model="itemsToDelete[(item.itemInfo[0]+'@'+item.itemInfo[1])]"/>
+			</td>
+			<td ng-repeat="col in field.columns" ng-init="index = $parent.$index">
+				<div ion-list-field></div>
+			</td>
+		</tr>
+	</tbody>
+</table>

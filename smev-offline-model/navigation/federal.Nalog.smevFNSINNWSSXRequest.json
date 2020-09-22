@@ -1,0 +1,12 @@
+{
+  "code": "federal.Nalog.smevFNSINNWSSXRequest",
+  "type": 1,
+  "caption": "(ФНС) Запрос сведений об ИНН ФЛ на основании паспортных данных по запросу ОИВ",
+  "classname": "smevFNSINNWSSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

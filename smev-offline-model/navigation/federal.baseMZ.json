@@ -1,0 +1,12 @@
+{
+  "code": "federal.baseMZ",
+  "type": 1,
+  "caption": "Базовый межведомственный запрос",
+  "classname": "baseMZ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

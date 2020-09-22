@@ -1,0 +1,12 @@
+{
+  "code": "regional",
+  "type": 0,
+  "caption": "Региональные сервисы",
+  "classname": null,
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

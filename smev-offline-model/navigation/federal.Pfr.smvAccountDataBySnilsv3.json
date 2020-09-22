@@ -1,0 +1,12 @@
+{
+  "code": "federal.Pfr.smvAccountDataBySnilsv3",
+  "type": 1,
+  "caption": "(ПФР) Запрос на получение СНИЛС",
+  "classname": "smvAccountDataBySnilsv3",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

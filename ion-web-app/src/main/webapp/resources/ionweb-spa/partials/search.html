@@ -1,0 +1,13 @@
+<split-area>
+  <div name="master-block">
+  	<h1>{{classCaption}}</h1>
+  	<div class="search-result" ng-repeat="result in searchResults track by $index">
+		<a href="{{resultUrl(result.classNode,result.className,result.id)}}">{{result.title}}</a>
+	  	<div ng-repeat="property in result.properties">
+	  		<label>{{property.caption}}:</label> {{property.value}}
+	  	</div>
+	</div>
+	<div style="text-align:right"><a href="#" ng-click="prevPage()" ng-if="canOpenPrevPage()">назад</a>&nbsp;<a href="#" ng-click="nextPage()" ng-if="canOpenNextPage()">дальше</a></div>
+  </div>
+  <div name="slave-block"></div>
+</split-area>

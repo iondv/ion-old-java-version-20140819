@@ -1,0 +1,12 @@
+{
+  "code": "federal.Pfr.pfrPaymentReq2",
+  "type": 1,
+  "caption": "(ПФР) Запрос на получение сведений о размере социальных выплат застрахованного лица на дату (без учета пенсии)",
+  "classname": "pfrPaymentReq2",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

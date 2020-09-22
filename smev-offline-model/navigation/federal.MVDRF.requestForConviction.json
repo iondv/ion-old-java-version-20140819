@@ -1,0 +1,12 @@
+{
+  "code": "federal.MVDRF.requestForConviction",
+  "type": 1,
+  "caption": "(МВД) Запрос на предоставление сведений о наличии (отсутствии) судимости",
+  "classname": "requestForConviction",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

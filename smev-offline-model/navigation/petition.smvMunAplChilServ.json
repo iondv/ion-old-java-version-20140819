@@ -1,0 +1,12 @@
+{
+  "code": "petition.smvMunAplChilServ",
+  "type": 1,
+  "caption": "Заявление на выдачу направления (путевки) для пребывания в детских оздоровительных лагерях в каникулярное время",
+  "classname": "smvMunAplChilServ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

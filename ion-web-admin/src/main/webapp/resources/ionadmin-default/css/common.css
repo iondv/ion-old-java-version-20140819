@@ -1,0 +1,133 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color:#effeef;
+	font-size:3mm;
+}
+
+input.text {
+	border-style:solid;
+	border-width:0.5mm;
+	border-color:navy;
+	font-size:1.1em;
+	padding:2mm;
+	border-radius:1mm;
+}
+
+input.text.tiny {
+	width:20mm;
+}
+
+input.text.short {
+	width:40mm;
+}
+
+input.text.medium {
+	width:60mm;
+}
+
+input.text.long {
+	width:80mm;
+}
+
+input.text.large {
+	width:100mm;
+}
+
+
+h3 {
+	display:block;
+	background-color:navy;
+	color:white;
+	font-size:1.2em;
+	padding:2mm;
+	font-weight:bold;
+	border-radius:2mm;
+	margin:0mm;
+}
+
+button {
+	font-size:1.1em;
+	color:white;
+	background-color:#704070;
+	border-style:solid;
+	border-width:1mm;
+	border-color:#301030;
+	padding:2mm;
+	border-radius:2mm;
+	min-width:20mm;
+}
+
+table {
+	border-collapse: collapse;
+	border-width:0.5mm;
+	border-style:solid;
+	border-color:gray;
+	width:100%;
+	background-color:white;
+}
+
+table th {
+	border-width:0.5mm;
+	border-style:solid;
+	border-color:silver;
+	font-size:0.7em;
+	background-color:#eeeeee;
+	padding:1mm;
+}
+
+table td {
+	border-width:0.5mm;
+	border-style:solid;
+	border-color:silver;
+	font-size:1em;
+	padding:1mm;
+}
+
+table.layout {
+	background-color:transparent;
+	border-style:none;
+}
+
+table.layout td{
+	border-style:none;
+	vertical-align: top;
+}
+
+table.list td {
+	border-style:solid;
+	vertical-align: middle;
+}
+
+.toolbar {
+	width:8mm;
+	background-color:white;
+	text-align:center;
+	padding:1mm;
+	border-style:solid;
+	border-color:silver;
+	position:fixed;
+}
+
+.toolbar button {
+	display:block;
+	width:7mm;
+	height:7mm;
+	min-width:7mm;
+	padding:0mm;
+	font-size:1em;
+	margin-top:1mm;
+	margin-bottom:1mm;
+}
+
+.toolbar button.inactive {
+	background-color:#eeeeee;
+	border-style:dotted;
+	border-color:silver;
+	border-width:0.5mm;
+}
+
+.toolbar-column {
+	width:12mm;
+}
+

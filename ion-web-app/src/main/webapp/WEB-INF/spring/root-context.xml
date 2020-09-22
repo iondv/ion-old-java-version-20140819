@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+			
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="appProps">
+  		<property name="locations">
+  			<list>
+  				<value>WEB-INF/db.properties</value>
+  			</list>
+  		</property>
+	    <property name="fileEncoding" value="UTF-8" />
+ 	</bean>
+ 	
+ 	<context:annotation-config/>
+ 	
+ 	<bean class="org.springframework.orm.hibernate4.HibernateTransactionManager" id="authTransactionManager">
+		<property name="sessionFactory" ref="authSessionFactory"/>
+	</bean>	
+ 	
+ 	<tx:annotation-driven transaction-manager="authTransactionManager"/>	
+	<!--  		
+	<bean name="authdb" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<property name="driverClassName" value="${db.driver}" />
+    	<property name="url" value="${db.url}" />
+    	<property name="username" value="${db.user}" />
+    	<property name="password" value="${db.password}" />
+	</bean>
+	-->
+	
+	<bean id="authdb" class="org.springframework.jndi.JndiObjectFactoryBean">
+    	<property name="jndiName" value="java:comp/env/${jndi.auth}"/>
+	</bean>	
+	
+	<bean id="pwd_encoder" class="ion.auth.util.BCryptHasher" />
+	
+	<bean id="auth_settings" class="ion.web.util.com.AuthSettings" />		
+			
+	<bean id="authSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="authdb"/>		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${db.dialect}</prop>
+				<prop key="hibernate.connection.charSet">UTF-8</prop>
+				<!--  <prop key="hibernate.show_sql">true</prop> -->
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<array>
+				<value>ion.auth.persistence</value>
+			</array>
+		</property>
+	</bean>
+	
+	<bean id="userDao" class="ion.auth.dao.UserDaoImpl">
+		<property name="passwordEncoder" ref="pwd_encoder" />
+		<property name="sessionFactory" ref="authSessionFactory" />
+	</bean>
+	
+	<bean class="ion.auth.dao.AuthorityDaoImpl" id="authorityDao">
+		<property name="sessionFactory" ref="authSessionFactory"/>
+	</bean>	
+	
+	<bean id="authService" class="ion.web.util.com.AuthService">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	
+	<security:authentication-manager alias="am">
+		<security:authentication-provider user-service-ref="authService">
+			<security:password-encoder hash="bcrypt"/>
+		</security:authentication-provider>
+	</security:authentication-manager>	
+			
+	<security:http pattern="/theme/**" security="none"/>
+	<security:http pattern="/files/**" security="none"/>
+	<security:http pattern="/login*" security="none"/>
+	<security:http pattern="/loginfailed*" security="none"/>
+	<security:http pattern="/restart" security="none"/>
+	<security:http pattern="/credentials" security="none"/>
+	<security:http pattern="/syncinfo/set*" security="none"/>
+	
+	<bean class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint" id="loginEntryPoint">
+ 		<property name="loginFormUrl" value="/login"/>
+	</bean>
+	
+	<bean class="ion.web.util.com.ExternalAuthDispatcher" id="extAuthDispatcher" />
+	
+	<bean class="ion.web.util.com.ExternalsAuthSuccessHandler" id="loginSuccessHandler">
+		<property name="authDispatcher" ref="extAuthDispatcher" />
+ 		<property name="alwaysUseDefaultTargetUrl" value="true"/>
+		<property name="defaultTargetUrl" value="/"/>
+	</bean>
+	
+	<bean class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler" id="loginFailureHandler">
+ 		<property name="defaultFailureUrl" value="/loginfailed"/>
+	</bean>	
+		
+	<bean class="ion.web.util.com.AuthSettingsFilter" id="authSettingsApplier">
+		<property name="authenticationManager" ref="am"/>
+		<property name="authSettings" ref="auth_settings"/>
+ 		<property name="authenticationFailureHandler" ref="loginFailureHandler"/>
+ 		<property name="authenticationSuccessHandler" ref="loginSuccessHandler"/> 	
+ 		<property name="rememberMeServices" ref="rememberMeServices"></property>	
+	</bean>
+	
+	<bean id="rememberMeServices"
+	      class="org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices">
+	  <property name="key" value="rmbrkey"></property>
+	  <property name="cookieName" value="remember-me"></property>
+	  <property name="tokenLength" value="32"></property>
+	  <property name="tokenRepository" ref="tokenRepository"></property>
+	  <property name="parameter" value="remember-me"></property>
+	  <property name="userDetailsService" ref="authService"></property>
+	</bean>
+	
+	<bean id="tokenRepository"
+      class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
+      <property name="dataSource" ref="authdb"></property>
+	</bean>
+					
+	<security:http auto-config="false" entry-point-ref="loginEntryPoint" use-expressions="true">
+		<security:intercept-url access="hasRole('ROLE_USER')" pattern="/**"/>
+		<security:custom-filter position="FORM_LOGIN_FILTER" ref="authSettingsApplier"/>
+		<security:logout delete-cookies="JSESSIONID" logout-url="/j_spring_security_logout"/>
+		<security:remember-me key="rmbrkey" services-ref="rememberMeServices"/>
+	</security:http>
+		
+</beans>

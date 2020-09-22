@@ -1,0 +1,12 @@
+{
+  "code": "federal.smvSID3907Request",
+  "type": 1,
+  "caption": "(Росимущество) Запрос сведений из реестра федерального имущества",
+  "classname": "smvSID3907Request",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

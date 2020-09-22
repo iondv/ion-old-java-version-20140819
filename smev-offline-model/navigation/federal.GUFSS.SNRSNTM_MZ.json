@@ -1,0 +1,12 @@
+{
+  "code": "federal.GUFSS.SNRSNTM_MZ",
+  "type": 1,
+  "caption": "(ФСС) Запрос сведений из ФСС о регистрации гражданина по ОСС на случай временной нетрудоспособности или в связи с материнством",
+  "classname": "SNRSNTM_MZ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

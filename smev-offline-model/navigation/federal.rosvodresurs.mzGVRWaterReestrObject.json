@@ -1,0 +1,12 @@
+{
+  "code": "federal.rosvodresurs.mzGVRWaterReestrObject",
+  "type": 1,
+  "caption": "(Росводресурсы) Предоставление сведений о водных объектах из Государственного водного реестра",
+  "classname": "mzGVRWaterReestrObject",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

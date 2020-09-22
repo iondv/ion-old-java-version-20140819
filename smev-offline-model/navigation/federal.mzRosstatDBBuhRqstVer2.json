@@ -1,0 +1,12 @@
+{
+  "code": "federal.mzRosstatDBBuhRqstVer2",
+  "type": 1,
+  "caption": "(Росстат) Данные бухгалтерской отчетности",
+  "classname": "mzRosstatDBBuhRqstVer2",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

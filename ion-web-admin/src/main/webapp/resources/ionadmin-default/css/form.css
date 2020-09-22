@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+table.layout td.content-column {
+	text-align:left;
+}
+
+.form {
+	background-color:white;
+	border-style:solid;
+	border-color:silver;
+	border-width:0.5mm;
+	padding:2mm;
+	min-width:200mm;
+	margin-top:2mm;
+}
+
+.form .field {
+	margin-top:2mm;
+	margin-bottom:2mm;
+	font-size:1.1em;
+}
+
+.form span.label {
+	color:silver;
+	font-weight:bold;
+	font-size:1em;
+	margin-right:4mm;
+}
+
+.button-holder {
+	text-align:right;
+}

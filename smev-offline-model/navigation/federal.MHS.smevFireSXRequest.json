@@ -1,0 +1,12 @@
+{
+  "code": "federal.MHS.smevFireSXRequest",
+  "type": 1,
+  "caption": "(МЧС) Запрос актов о пожаре",
+  "classname": "smevFireSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

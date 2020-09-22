@@ -1,0 +1,12 @@
+{
+  "code": "federal.rosimushestvo.mzROSImushestvoReestr",
+  "type": 1,
+  "caption": "(Росимущество) Запрос сведений из реестра федерального имущества",
+  "classname": "mzROSImushestvoReestr",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

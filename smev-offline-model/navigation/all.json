@@ -1,0 +1,12 @@
+{
+  "code": "all",
+  "type": 1,
+  "caption": "СМЭВ",
+  "classname": "SmevEntity",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

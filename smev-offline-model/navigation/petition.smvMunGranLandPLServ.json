@@ -1,0 +1,12 @@
+{
+  "code": "petition.smvMunGranLandPLServ",
+  "type": 1,
+  "caption": "Заявление на предоставление физическим лицам в постоянное (бессрочное) пользование, в безвозмездное пользование, аренду земельных участков из состава земель, государственная собственность на которые не разграничена",
+  "classname": "smvMunGranLandPLServ",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}

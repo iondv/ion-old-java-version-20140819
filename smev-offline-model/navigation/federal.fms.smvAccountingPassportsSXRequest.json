@@ -1,0 +1,12 @@
+{
+  "code": "federal.fms.smvAccountingPassportsSXRequest",
+  "type": 1,
+  "caption": "(ФМС) Запрос на предоставление сведений о действительности (недействительности) паспорта гражданина Российской Федерации",
+  "classname": "smvAccountingPassportsSXRequest",
+  "container": null,
+  "collection": null,
+  "conditions": [],
+  "sorting": [],
+  "access": [],
+  "pathChains": []
+}
